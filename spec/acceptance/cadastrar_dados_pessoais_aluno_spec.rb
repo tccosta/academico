@@ -9,7 +9,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'E-mail', :with => 'kirillsk8@gmail.com'
     fill_in 'Pai', :with => 'Sergio'
     fill_in 'Mãe', :with => 'Elena'
-    fill_in 'Data de nascimento', :with '22/02/1988'
+    fill_in 'Data de nascimento', :with => '22/02/1988'
     fill_in 'Sexo', :with => 'Masculino'
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
