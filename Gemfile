@@ -6,6 +6,7 @@ gem 'sqlite3'
 
 gem 'inherited_resources', '~>1.2.0'
 gem 'formtastic', '~>1.2.0'
+gem 'brazilian-rails', '~>3.0.0'
 
 group :test do
   gem 'rspec-rails', '~>2.6.0'
