@@ -27,6 +27,8 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Nacionalidade: Brasileiro'
     page.should have_content 'Naturalidade: Russo'
     page.should have_content 'Estado civil: Solteiro'
+    page.should have_content 'Editar'
+    page.should have_content 'Voltar'
   end
 end
 

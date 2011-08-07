@@ -6,17 +6,18 @@
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>E-mail:</b>
   <%= @aluno.email %>
 </p>
 
+<p><b>Filiação</b></p>
 <p>
   <b>Pai:</b>
   <%= @aluno.pai %>
 </p>
 
 <p>
-  <b>Mae:</b>
+  <b>Mãe:</b>
   <%= @aluno.mae %>
 </p>
 
@@ -46,5 +47,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_aluno_path(@aluno) %> |
-<%= link_to 'Back', alunos_path %>
+<%= link_to 'Editar', edit_aluno_path(@aluno) %> |
+<%= link_to 'Voltar', alunos_path %>
+
