@@ -1,0 +1,39 @@
+<h1>Listing alunos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Pai</th>
+    <th>Mae</th>
+    <th>Data de nascimento</th>
+    <th>Sexo</th>
+    <th>Nacionalidade</th>
+    <th>Naturalidade</th>
+    <th>Estado civil</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @alunos.each do |aluno| %>
+  <tr>
+    <td><%= aluno.nome %></td>
+    <td><%= aluno.email %></td>
+    <td><%= aluno.pai %></td>
+    <td><%= aluno.mae %></td>
+    <td><%= aluno.data_de_nascimento %></td>
+    <td><%= aluno.sexo %></td>
+    <td><%= aluno.nacionalidade %></td>
+    <td><%= aluno.naturalidade %></td>
+    <td><%= aluno.estado_civil %></td>
+    <td><%= link_to 'Show', aluno %></td>
+    <td><%= link_to 'Edit', edit_aluno_path(aluno) %></td>
+    <td><%= link_to 'Destroy', aluno, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Aluno', new_aluno_path %>

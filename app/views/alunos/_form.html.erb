@@ -1,0 +1,53 @@
+<%= form_for(@aluno) do |f| %>
+  <% if @aluno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aluno.errors.count, "error") %> prohibited this aluno from being saved:</h2>
+
+      <ul>
+      <% @aluno.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :pai %><br />
+    <%= f.text_field :pai %>
+  </div>
+  <div class="field">
+    <%= f.label :mae %><br />
+    <%= f.text_field :mae %>
+  </div>
+  <div class="field">
+    <%= f.label :data_de_nascimento %><br />
+    <%= f.date_select :data_de_nascimento %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo %><br />
+    <%= f.text_field :sexo %>
+  </div>
+  <div class="field">
+    <%= f.label :nacionalidade %><br />
+    <%= f.text_field :nacionalidade %>
+  </div>
+  <div class="field">
+    <%= f.label :naturalidade %><br />
+    <%= f.text_field :naturalidade %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_civil %><br />
+    <%= f.text_field :estado_civil %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
