@@ -44,14 +44,7 @@ feature 'cadastrar dados pessoais do aluno' do
 
     page.should have_content 'Nome - deve ser preenchido.'
     page.should have_content 'Data de nascimento - deve ser preenchida.'
-    page.should have_content 'Estado civil- deve ser preenchido.'
-    page.should have_content 'E-mail: kirillsk8@gmail.com'
-    page.should have_content 'Filiação'
-    page.should have_content 'Pai: Sergio'
-    page.should have_content 'Mãe: Elena'
-    page.should have_content 'Sexo: Masculino'
-    page.should have_content 'Nacionalidade: Brasileiro'
-    page.should have_content 'Naturalidade: Russo'
+    page.should have_content 'Estado civil - deve ser preenchido.'
     page.should have_content 'Voltar'
   end
 end
