@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @professor.nome %>
+</p>
+
+<p>
+  <b>Matricula:</b>
+  <%= @professor.matricula %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @professor.tipo %>
+</p>
+
+<p>
+  <b>Area de conhecimento:</b>
+  <%= @professor.area_de_conhecimento %>
+</p>
+
+<p>
+  <b>Sub area de conhecimento:</b>
+  <%= @professor.sub_area_de_conhecimento %>
+</p>
+
+<p>
+  <b>Lattes:</b>
+  <%= @professor.lattes %>
+</p>
+
+
+<%= link_to 'Edit', edit_professor_path(@professor) %> |
+<%= link_to 'Back', professors_path %>
