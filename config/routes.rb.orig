@@ -1,6 +1,9 @@
 Academico::Application.routes.draw do
+<<<<<<< HEAD
   resources :alunos
+=======
   resources :professors
+>>>>>>> 29594f7f4c28aff1e59473d2578aacae8f7016ba
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

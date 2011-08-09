@@ -10,7 +10,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110808215345) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20110807123720) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -22,9 +23,8 @@ ActiveRecord::Schema.define(:version => 20110808215345) do
     t.string   "nacionalidade"
     t.string   "naturalidade"
     t.string   "estado_civil"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+=======
+ActiveRecord::Schema.define(:version => 20110808215345) do
 
   create_table "professors", :force => true do |t|
     t.string   "nome"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110808215345) do
     t.string   "area_de_conhecimento"
     t.string   "sub_area_de_conhecimento"
     t.string   "lattes"
+>>>>>>> 29594f7f4c28aff1e59473d2578aacae8f7016ba
     t.datetime "created_at"
     t.datetime "updated_at"
   end
