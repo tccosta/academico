@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110808215345) do
+ActiveRecord::Schema.define(:version => 20110809135830) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20110808215345) do
     t.datetime "updated_at"
   end
 
-  create_table "professors", :force => true do |t|
+  create_table "professores", :force => true do |t|
     t.string   "nome"
     t.string   "matricula"
     t.string   "tipo"

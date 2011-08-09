@@ -1,6 +1,6 @@
 Academico::Application.routes.draw do
   resources :alunos
-  resources :professors
+  resources :professores
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -59,3 +59,4 @@ Academico::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+

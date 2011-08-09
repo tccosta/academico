@@ -1,4 +1,4 @@
-<h1>Listing professors</h1>
+<h1>Listing professores</h1>
 
 <table>
   <tr>
@@ -13,7 +13,7 @@
     <th></th>
   </tr>
 
-<% @professors.each do |professor| %>
+<% @professores.each do |professor| %>
   <tr>
     <td><%= professor.nome %></td>
     <td><%= professor.matricula %></td>
@@ -31,3 +31,4 @@
 <br />
 
 <%= link_to 'New Professor', new_professor_path %>
+
