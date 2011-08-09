@@ -41,7 +41,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Naturalidade', :with => 'Russo'
     click_button 'Salvar'
 
-
+    page.should have_content 'Novo aluno'
     page.should have_content 'Nome - deve ser preenchido.'
     page.should have_content 'Data de nascimento - deve ser preenchida.'
     page.should have_content 'Estado civil - deve ser preenchido.'
