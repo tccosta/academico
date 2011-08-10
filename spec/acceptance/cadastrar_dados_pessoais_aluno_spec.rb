@@ -45,6 +45,7 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Nome - deve ser preenchido.'
     page.should have_content 'Data de nascimento - deve ser preenchida.'
     page.should have_content 'Estado civil - deve ser preenchido.'
+    page.should have_content 'Filiação'
     page.should have_content 'Voltar'
   end
 end
