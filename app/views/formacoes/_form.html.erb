@@ -1,0 +1,15 @@
+<%= semantic_form_for(@formacao) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :instituicao, :label => 'Instituição' %>
+    <%= f.input :tipo, :collection => Formacao::TIPOS %>
+    <%= f.input :ano_de_inicio, :label => 'Ano de Início' %>
+    <%= f.input :ano_de_conclusao, :label => 'Ano de Conclusão' %>
+    <%= f.input :area_de_conhecimento, :label => 'Área de Conhecimento' %>
+    <%= f.input :titulo_trabalho_de_conclusao, :label => 'Título do Trabalho de Conclusão', :hint => 'Apenas para graduação e pós graduação.'%>
+    <%= f.input :orientador, :label => 'Orientador', :hint => 'Apenas para graduação e pós graduação.'%>
+  <% end %>
+  <div class="actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>
+
