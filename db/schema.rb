@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110809135830) do
+ActiveRecord::Schema.define(:version => 20110811220109) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(:version => 20110809135830) do
     t.string   "nacionalidade"
     t.string   "naturalidade"
     t.string   "estado_civil"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "formacoes", :force => true do |t|
+    t.string   "instituicao"
+    t.string   "tipo"
+    t.integer  "ano_de_inicio"
+    t.integer  "ano_de_conclusao"
+    t.string   "area_de_conhecimento"
+    t.string   "titulo_trabalho_de_conclusao"
+    t.string   "orientador"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
