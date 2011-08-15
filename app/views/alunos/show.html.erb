@@ -46,6 +46,80 @@
   <%= @aluno.estado_civil %>
 </p>
 
+<p>
+  <b>CPF:</b>
+  <%= @aluno.cpf %>
+</p>
+
+<p>
+  <b>RG:</b>
+  <%= @aluno.rg %>
+</p>
+
+<p>
+  <b>Orgão Emissor do RG:</b>
+  <%= @aluno.orgao_emissor_do_rg %>
+</p>
+
+<p>
+  <b>Estado do RG:</b>
+  <%= @aluno.estado_do_rg %>
+</p>
+
+<p>
+  <b>Data de Expedição do RG:</b>
+  <%= @aluno.data_de_expedicao_do_rg.to_s_br %>
+</p>
+
+<p>
+  <b>Número do Título de Eleitor:</b>
+  <%= @aluno.numero_do_titulo_de_eleitor %>
+</p>
+
+<p>
+  <b>Zona do Título de Eleitor:</b>
+  <%= @aluno.zona_do_titulo_de_eleitor %>
+</p>
+
+<p>
+  <b>Seção do Título de Eleitor:</b>
+  <%= @aluno.secao_do_titulo_de_eleitor %>
+</p>
+
+<p>
+  <b>Estado do Título de Eleitor:</b>
+  <%= @aluno.estado_do_titulo_de_eleitor %>
+</p>
+
+<p>
+  <b>Data de Emissão do Título de Eleitor:</b>
+  <%= @aluno.data_de_emissao_do_titulo_de_eleitor.to_s_br %>
+</p>
+
+<p>
+  <b>Número do Certificado de Reservista:</b>
+  <%= @aluno.numero_do_certificado_de_reservista %>
+</p>
+
+<p>
+  <b>Orgão do Certificado de Reservista:</b>
+  <%= @aluno.orgao_do_certificado_de_reservista %>
+</p>
+
+<p>
+  <b>Categoria do Certificado de Reservista:</b>
+  <%= @aluno.categoria_do_certificado_de_reservista %>
+</p>
+
+<p>
+  <b>Data de Emissão do Certificado de Reservista:</b>
+  <%= @aluno.data_de_emissao_do_certificado_de_reservista.to_s_br %>
+</p>
+
+<p>
+  <b>Estado do Certificado de Reservista:</b>
+  <%= @aluno.estado_do_certificado_de_reservista %>
+</p>
 
 <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
 <%= link_to 'Voltar', alunos_path %>
