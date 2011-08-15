@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110811220109) do
+=======
+ActiveRecord::Schema.define(:version => 20110815121319) do
+>>>>>>> criada a migração adicionando os campos de documentação do aluno
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -24,6 +28,21 @@ ActiveRecord::Schema.define(:version => 20110811220109) do
     t.string   "estado_civil"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cpf"
+    t.string   "rg"
+    t.string   "orgao_emissor_do_rg"
+    t.string   "estado_do_rg"
+    t.date     "data_de_expedicao_do_rg"
+    t.string   "numero_do_titulo_de_eleitor"
+    t.string   "zona_do_titulo_de_eleitor"
+    t.string   "secao_do_titulo_de_eleitor"
+    t.string   "estado_do_titulo_de_eleitor"
+    t.date     "data_de_emissao_do_titulo_de_eleitor"
+    t.string   "numero_do_certificado_de_reservista"
+    t.string   "orgao_do_certificado_de_reservista"
+    t.string   "categoria_do_certificado_de_reservista"
+    t.date     "data_de_emissao_do_certificado_de_reservista"
+    t.string   "estado_do_certificado_de_reservista"
   end
 
   create_table "formacoes", :force => true do |t|
