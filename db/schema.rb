@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20110811220109) do
-=======
-ActiveRecord::Schema.define(:version => 20110815121319) do
->>>>>>> criada a migração adicionando os campos de documentação do aluno
+ActiveRecord::Schema.define(:version => 20110817033300) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -43,6 +39,19 @@ ActiveRecord::Schema.define(:version => 20110815121319) do
     t.string   "categoria_do_certificado_de_reservista"
     t.date     "data_de_emissao_do_certificado_de_reservista"
     t.string   "estado_do_certificado_de_reservista"
+  end
+
+  create_table "dados_academicos", :force => true do |t|
+    t.integer  "matricula"
+    t.string   "curso"
+    t.integer  "semestre"
+    t.string   "forma_de_ingresso"
+    t.date     "data_da_prova_do_ingresso"
+    t.boolean  "cotista"
+    t.string   "tipo_de_cota"
+    t.string   "link_do_lattes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "formacoes", :force => true do |t|

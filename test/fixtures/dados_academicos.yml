@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  matricula: 1
+  curso: MyString
+  semestre: 1
+  forma_de_ingresso: MyString
+  data_da_prova_do_ingresso: 2011-08-17
+  cotista: false
+  tipo_de_cota: MyString
+  link_do_lattes: MyString
+
+two:
+  matricula: 1
+  curso: MyString
+  semestre: 1
+  forma_de_ingresso: MyString
+  data_da_prova_do_ingresso: 2011-08-17
+  cotista: false
+  tipo_de_cota: MyString
+  link_do_lattes: MyString

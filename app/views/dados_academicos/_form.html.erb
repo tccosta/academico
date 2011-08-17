@@ -1,0 +1,49 @@
+<%= form_for(@dados_academico) do |f| %>
+  <% if @dados_academico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dados_academico.errors.count, "error") %> prohibited this dados_academico from being saved:</h2>
+
+      <ul>
+      <% @dados_academico.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :matricula, 'Matrícula' %><br />
+    <%= f.text_field :matricula %>
+  </div>
+  <div class="field">
+    <%= f.label :curso %><br />
+    <%= f.text_field :curso %>
+  </div>
+  <div class="field">
+    <%= f.label :semestre %><br />
+    <%= f.text_field :semestre %>
+  </div>
+  <div class="field">
+    <%= f.label :forma_de_ingresso,'Forma de Ingresso' %><br />
+    <%= f.text_field :forma_de_ingresso %>
+  </div>
+  <div class="field">
+    <%= f.label :data_da_prova_do_ingresso,'Data do vestibular/ENEM' %><br />
+    <%= f.text_field :data_da_prova_do_ingresso %>
+  </div>
+  <div class="field">
+    <%= f.label :cotista %><br />
+    <%= f.check_box :cotista %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_de_cota %><br />
+    <%= f.text_field :tipo_de_cota %>
+  </div>
+  <div class="field">
+    <%= f.label :link_do_lattes, 'Link do Curriculum Lattes' %><br />
+    <%= f.text_field :link_do_lattes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
