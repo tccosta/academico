@@ -12,6 +12,18 @@ before_script:
 notifications:
   recipients:
     - rmanhaes@gmail.com
+    - zangrandii@gmail.com
+    - camila.usagi@gmail.com
+    - jlalmeidaf2@hotmail.com
+    - juquinhaa@gmail.com
+    - marcelorj.oliveira@gmail.com
+    - mayrasantana@gmail.com
+    - rafaelbpcrespo@gmail.com
+    - raphaelframos@gmail.com
+    - renatagomes.cord@gmail.com
+    - sanya.carvalho@yahoo.com.br
+    - ticarvalhocosta@gmail.com
+    - kirillsk8@gmail.com
 
 branches:
   only:
