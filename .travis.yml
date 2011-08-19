@@ -7,7 +7,6 @@ script: "bundle exec rspec spec/"
 
 before_script:
   - "cp config/database.yml.travis config/database.yml"
-  - "rake db:create"
   - "rake db:schema:load"
 
 notifications:
