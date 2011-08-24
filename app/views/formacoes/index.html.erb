@@ -1,0 +1,36 @@
+<h1>Lista de Formações</h1>
+
+<table>
+  <tr>
+    <th>Instituicao</th>
+    <th>Tipo</th>
+    <th>Ano de inicio</th>
+    <th>Ano de conclusao</th>
+    <th>Area de conhecimento</th>
+    <th>Titulo trabalho de conclusao</th>
+    <th>Orientador</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @formacoes.each do |formacao| %>
+  <tr>
+    <td><%= formacao.instituicao %></td>
+    <td><%= formacao.tipo %></td>
+    <td><%= formacao.ano_de_inicio %></td>
+    <td><%= formacao.ano_de_conclusao %></td>
+    <td><%= formacao.area_de_conhecimento %></td>
+    <td><%= formacao.titulo_trabalho_de_conclusao %></td>
+    <td><%= formacao.orientador %></td>
+    <td><%= link_to 'Exibir', formacao %></td>
+    <td><%= link_to 'Editar', edit_formacao_path(formacao) %></td>
+    <td><%= link_to 'Apagar', formacao, :confirm => 'Tem certeza?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nova Formação', new_formacao_path %>
+

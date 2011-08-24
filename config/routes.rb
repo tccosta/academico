@@ -1,4 +1,6 @@
 Academico::Application.routes.draw do
+  resources :formacoes
+
   resources :alunos
   resources :professores
 

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Instituição:</b>
+  <%= @formacao.instituicao %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @formacao.tipo %>
+</p>
+
+<p>
+  <b>Ano de Início:</b>
+  <%= @formacao.ano_de_inicio %>
+</p>
+
+<p>
+  <b>Ano de Conclusão:</b>
+  <%= @formacao.ano_de_conclusao %>
+</p>
+
+<p>
+  <b>Área de Conhecimento:</b>
+  <%= @formacao.area_de_conhecimento %>
+</p>
+
+<p>
+  <b>Título do Trabalho de Conclusão:</b>
+  <%= @formacao.titulo_trabalho_de_conclusao %>
+</p>
+
+<p>
+  <b>Orientador:</b>
+  <%= @formacao.orientador %>
+</p>
+
+<%= link_to 'Editar', edit_formacao_path(@formacao) %> |
+<%= link_to 'Voltar', formacoes_path %>
+
