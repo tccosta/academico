@@ -1,0 +1,37 @@
+<h1>Listing dados_academicos</h1>
+
+<table>
+  <tr>
+    <th>Matricula</th>
+    <th>Curso</th>
+    <th>Semestre</th>
+    <th>Forma de ingresso</th>
+    <th>Data da prova do ingresso</th>
+    <th>Cotista</th>
+    <th>Tipo de cota</th>
+    <th>Link do lattes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dados_academicos.each do |dados_academico| %>
+  <tr>
+    <td><%= dados_academico.matricula %></td>
+    <td><%= dados_academico.curso %></td>
+    <td><%= dados_academico.semestre %></td>
+    <td><%= dados_academico.forma_de_ingresso %></td>
+    <td><%= dados_academico.data_da_prova_do_ingresso %></td>
+    <td><%= dados_academico.cotista %></td>
+    <td><%= dados_academico.tipo_de_cota %></td>
+    <td><%= dados_academico.link_do_lattes %></td>
+    <td><%= link_to 'Show', dados_academico %></td>
+    <td><%= link_to 'Edit', edit_dados_academico_path(dados_academico) %></td>
+    <td><%= link_to 'Destroy', dados_academico, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dados academico', new_dados_academico_path %>

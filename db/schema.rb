@@ -11,6 +11,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110815121319) do
 =======
 <<<<<<< HEAD
@@ -19,6 +20,9 @@ ActiveRecord::Schema.define(:version => 20110811220109) do
 ActiveRecord::Schema.define(:version => 20110815121319) do
 >>>>>>> criada a migração adicionando os campos de documentação do aluno
 >>>>>>> 898b3c0126cf5790dd39cb31985651ff64b09c8b
+=======
+ActiveRecord::Schema.define(:version => 20110817033300) do
+>>>>>>> 81a66bd9608a001ba5b06dc0131371391432bcd2
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -49,6 +53,19 @@ ActiveRecord::Schema.define(:version => 20110815121319) do
     t.string   "estado_do_certificado_de_reservista"
 <<<<<<< HEAD
 =======
+  end
+
+  create_table "dados_academicos", :force => true do |t|
+    t.integer  "matricula"
+    t.string   "curso"
+    t.integer  "semestre"
+    t.string   "forma_de_ingresso"
+    t.date     "data_da_prova_do_ingresso"
+    t.boolean  "cotista"
+    t.string   "tipo_de_cota"
+    t.string   "link_do_lattes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "formacoes", :force => true do |t|
