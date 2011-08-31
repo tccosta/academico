@@ -46,8 +46,8 @@
     <%= f.text_field :naturalidade %>
   </div>
   <div class="field">
-    <%= f.label :estado_civil %><br />
-    <%= f.text_field :estado_civil %>
+    <%= f.label :estado_civil, 'Estado civil' %><br />
+    <%= f.select :estado_civil, Aluno::ESTADO_CIVIL, {:include_blank => true} %>
   </div>
 
   <fieldset>

@@ -14,7 +14,7 @@ feature 'cadastrar documentos do aluno' do
     select('Masculino', :from => 'Sexo')
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
-    fill_in 'Estado civil', :with => 'Solteiro'
+    select('Solteiro(a)', :from => 'Estado civil')
 
     fill_in 'Cpf', :with => '12797827732'
     fill_in 'Rg', :with => '209912310'
@@ -45,7 +45,7 @@ feature 'cadastrar documentos do aluno' do
     page.should have_content 'Sexo: Masculino'
     page.should have_content 'Nacionalidade: Brasileiro'
     page.should have_content 'Naturalidade: Russo'
-    page.should have_content 'Estado civil: Solteiro'
+    page.should have_content 'Estado civil: Solteiro(a)'
 
     page.should have_content 'CPF: 127.978.277-32'
     page.should have_content 'RG: 209912310'

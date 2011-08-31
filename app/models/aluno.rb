@@ -6,7 +6,7 @@ class Aluno < ActiveRecord::Base
   validates :numero_do_certificado_de_reservista,:data_de_emissao_do_certificado_de_reservista, :categoria_do_certificado_de_reservista, :orgao_do_certificado_de_reservista, :estado_do_certificado_de_reservista, :presence => {:message => ' - deve ser preenchido' }, :if => :e_necessario_certificado_de_reservista?, :unless => :new_record?
 
   SEXO = ['Masculino','Feminino']
-
+  ESTADO_CIVIL = ['Solteiro(a)','Casado(a)','Separado(a)','Divorciado(a)','Viuvo(a)']
   usar_como_cpf :cpf
 
   def e_necessario_certificado_de_reservista?

@@ -13,7 +13,7 @@ feature 'cadastrar dados pessoais do aluno' do
     select('Masculino', :from => 'Sexo')
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
-    fill_in 'Estado civil', :with => 'Solteiro'
+    select('Solteiro(a)', :from => 'Estado civil')
     click_button 'Salvar'
 
     page.should have_content 'Aluno cadastrado com sucesso.'
@@ -26,7 +26,7 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Sexo: Masculino'
     page.should have_content 'Nacionalidade: Brasileiro'
     page.should have_content 'Naturalidade: Russo'
-    page.should have_content 'Estado civil: Solteiro'
+    page.should have_content 'Estado civil: Solteiro(a)'
     page.should have_content 'Editar'
     page.should have_content 'Voltar'
   end
