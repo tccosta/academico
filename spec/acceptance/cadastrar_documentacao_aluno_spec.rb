@@ -11,7 +11,7 @@ feature 'cadastrar documentos do aluno' do
     fill_in 'Pai', :with => 'Sergio'
     fill_in 'Mãe', :with => 'Elena'
     fill_in 'Data de nascimento', :with => '23/01/1990'
-    fill_in 'Sexo', :with => 'Masculino'
+    select('Masculino', :from => 'Sexo')
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
     fill_in 'Estado civil', :with => 'Solteiro'

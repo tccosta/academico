@@ -10,7 +10,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Pai', :with => 'Sergio'
     fill_in 'Mãe', :with => 'Elena'
     fill_in 'Data de nascimento', :with => '22/02/1988'
-    fill_in 'Sexo', :with => 'Masculino'
+    select('Masculino', :from => 'Sexo')
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
     fill_in 'Estado civil', :with => 'Solteiro'
@@ -36,7 +36,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'E-mail', :with => 'kirillsk8@gmail.com'
     fill_in 'Pai', :with => 'Sergio'
     fill_in 'Mãe', :with => 'Elena'
-    fill_in 'Sexo', :with => 'Masculino'
+    select('Masculino', :from => 'Sexo')
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
     click_button 'Salvar'
@@ -45,6 +45,24 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Nome - deve ser preenchido.'
     page.should have_content 'Data de nascimento - deve ser preenchida.'
     page.should have_content 'Estado civil - deve ser preenchido.'
+    page.should have_content 'Filiação'
+    page.should have_content 'Voltar'
+  end
+
+  scenario 'cadastro incompleto sem preenchimento de sexo' do
+    visit new_aluno_path
+    fill_in 'E-mail', :with => 'kirillsk8@gmail.com'
+    fill_in 'Pai', :with => 'Sergio'
+    fill_in 'Mãe', :with => 'Elena'
+    fill_in 'Nacionalidade', :with => 'Brasileiro'
+    fill_in 'Naturalidade', :with => 'Russo'
+    click_button 'Salvar'
+
+    page.should have_content 'Novo aluno'
+    page.should have_content 'Nome - deve ser preenchido.'
+    page.should have_content 'Data de nascimento - deve ser preenchida.'
+    page.should have_content 'Estado civil - deve ser preenchido.'
+    page.should have_content 'Sexo - deve ser preenchido.'
     page.should have_content 'Filiação'
     page.should have_content 'Voltar'
   end
