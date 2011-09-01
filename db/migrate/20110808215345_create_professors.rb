@@ -7,6 +7,7 @@ class CreateProfessors < ActiveRecord::Migration
       t.string :area_de_conhecimento
       t.string :sub_area_de_conhecimento
       t.string :lattes
+	  t.belongs_to :curso
 
       t.timestamps
     end

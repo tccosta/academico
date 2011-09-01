@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20110811220109) do
-=======
-ActiveRecord::Schema.define(:version => 20110815121319) do
->>>>>>> criada a migração adicionando os campos de documentação do aluno
+ActiveRecord::Schema.define(:version => 20110817014711) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -45,6 +41,29 @@ ActiveRecord::Schema.define(:version => 20110815121319) do
     t.string   "estado_do_certificado_de_reservista"
   end
 
+  create_table "area_de_conhecimento_cursos", :force => true do |t|
+    t.integer  "curso_id"
+    t.integer  "area_de_conhecimento_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "area_de_conhecimentos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cursos", :force => true do |t|
+    t.string   "nome"
+    t.string   "sigla"
+    t.string   "laboratorio"
+    t.integer  "duracao"
+    t.integer  "professor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "formacoes", :force => true do |t|
     t.string   "instituicao"
     t.string   "tipo"
@@ -64,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20110815121319) do
     t.string   "area_de_conhecimento"
     t.string   "sub_area_de_conhecimento"
     t.string   "lattes"
+    t.integer  "curso_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
