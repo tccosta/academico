@@ -1,3 +1,13 @@
+<script type='text/javascript'>
+jQuery(function($){
+   $("#aluno_data_de_nascimento").mask("99/99/9999");
+   $("#aluno_data_de_expedicao_do_rg").mask("99/99/9999");
+   $("#aluno_data_de_emissao_do_titulo_de_eleitor").mask("99/99/9999");
+   $("#aluno_data_de_emissao_do_certificado_de_reservista").mask("99/99/9999");
+
+});
+</script>
+
 <%= form_for(@aluno) do |f| %>
   <% if @aluno.errors.any? %>
     <div id="error_explanation">
