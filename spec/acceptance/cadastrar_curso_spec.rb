@@ -7,14 +7,17 @@ feature 'cadastrar dados do curso' do
 
 	Professor.create!(:nome => 'Annabell')	
 	AreaDeConhecimento.create!(:name => 'redes')
+	AreaDeConhecimento.create!(:name => 'ia')
+  Laboratorio.create!(:sigla => 'LCMAT')
 
     visit new_curso_path
     fill_in 'Nome', :with => 'Ciência da Computação'
     fill_in 'Sigla', :with => 'CC'
-    fill_in 'Laboratório', :with => 'LCMAT'
+    select('LCMAT', :from => 'Laboratório')
     fill_in 'Duração', :with => '10'
-	select('Annabell', :from => 'Coordenador')
-	check 'redes'
+	  select('Annabell', :from => 'Coordenador')
+	  check 'redes'
+    check 'ia'
     click_button 'Salvar'
     save_and_open_page
 
@@ -23,10 +26,11 @@ feature 'cadastrar dados do curso' do
     page.should have_content 'Sigla: CC'
     page.should have_content 'Laboratório: LCMAT'
     page.should have_content 'Duração: 10'
-	page.should have_content 'Coordenador: Annabell'
-#	within_fieldset('Áreas') do
-	  page.should have_content 'redes'
-#	end
+	  page.should have_content 'Coordenador: Annabell'
+  	#within_fieldset('Áreas de Conhecimento') do
+	    page.should have_content 'redes'
+      page.should have_content 'ia'
+  	#end
     page.should have_content 'Editar'
     page.should have_content 'Voltar'
   end
