@@ -1,0 +1,46 @@
+<%= require 'brazilian-rails' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Matricula:</b>
+  <%= @dados_academico.matricula %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @dados_academico.curso %>
+</p>
+
+<p>
+  <b>Semestre:</b>
+  <%= @dados_academico.semestre %>
+</p>
+
+<p>
+  <b>Forma de ingresso:</b>
+  <%= @dados_academico.forma_de_ingresso %>
+</p>
+
+<p>
+  <b>Data do vestibular/ENEM:</b>
+  <%= @dados_academico.data_da_prova_do_ingresso.to_s_br %>
+</p>
+
+<p>
+  <b>Cotista:</b>
+  <%= @dados_academico.cotista ? 'Sim': 'Nao' %>
+</p>
+
+<p>
+  <b>Tipo de cota:</b>
+  <%= @dados_academico.tipo_de_cota %>
+</p>
+
+<p>
+  <b>Link do lattes:</b>
+  <%= @dados_academico.link_do_lattes %>
+</p>
+
+
+<%= link_to 'Editar', edit_dados_academico_path(@dados_academico) %> |
+<%= link_to 'Voltar', dados_academicos_path %>

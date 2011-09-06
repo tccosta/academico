@@ -1,3 +1,13 @@
+<script type='text/javascript'>
+jQuery(function($){
+   $("#aluno_data_de_nascimento").mask("99/99/9999");
+   $("#aluno_data_de_expedicao_do_rg").mask("99/99/9999");
+   $("#aluno_data_de_emissao_do_titulo_de_eleitor").mask("99/99/9999");
+   $("#aluno_data_de_emissao_do_certificado_de_reservista").mask("99/99/9999");
+
+});
+</script>
+
 <%= form_for(@aluno) do |f| %>
   <% if @aluno.errors.any? %>
     <div id="error_explanation">
@@ -17,22 +27,25 @@
     <%= f.label :email, 'E-mail' %><br />
     <%= f.text_field :email %>
   </div>
-  <b>Filiação</b><br />
-  <div class="field">
-    <%= f.label :pai %><br />
-    <%= f.text_field :pai %>
-  </div>
-  <div class="field">
-    <%= f.label :mae, 'Mãe' %><br />
-    <%= f.text_field :mae %>
-  </div>
+  <fieldset>
+  <legend>Filiação</legend>
+    <div class="field">
+      <%= f.label :pai %><br />
+      <%= f.text_field :pai %>
+    </div>
+    <div class="field">
+      <%= f.label :mae, 'Mãe' %><br />
+      <%= f.text_field :mae %>
+    </div>
+  </fieldset>
+
   <div class="field">
     <%= f.label :data_de_nascimento, 'Data de nascimento' %><br />
     <%= f.text_field :data_de_nascimento %>
   </div>
   <div class="field">
     <%= f.label :sexo %><br />
-    <%= f.text_field :sexo %>
+    <%= f.select :sexo, Aluno::SEXO, {:include_blank => true} %>
   </div>
   <div class="field">
     <%= f.label :nacionalidade %><br />
@@ -43,8 +56,8 @@
     <%= f.text_field :naturalidade %>
   </div>
   <div class="field">
-    <%= f.label :estado_civil %><br />
-    <%= f.text_field :estado_civil %>
+    <%= f.label :estado_civil, 'Estado civil' %><br />
+    <%= f.select :estado_civil, Aluno::ESTADO_CIVIL, {:include_blank => true} %>
   </div>
 
   <fieldset>

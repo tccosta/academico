@@ -11,7 +11,6 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20110901190543) do
-
   create_table "alunos", :force => true do |t|
     t.string   "nome"
     t.string   "email"
@@ -61,6 +60,19 @@ ActiveRecord::Schema.define(:version => 20110901190543) do
     t.integer  "duracao"
     t.integer  "professor_id"
     t.integer  "laboratorio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dados_academicos", :force => true do |t|
+    t.integer  "matricula"
+    t.string   "curso"
+    t.integer  "semestre"
+    t.string   "forma_de_ingresso"
+    t.date     "data_da_prova_do_ingresso"
+    t.boolean  "cotista"
+    t.string   "tipo_de_cota"
+    t.string   "link_do_lattes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
