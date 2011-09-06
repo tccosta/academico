@@ -19,7 +19,7 @@ feature 'cadastrar dados do curso' do
 	  check 'redes'
     check 'ia'
     click_button 'Salvar'
-    save_and_open_page
+    #save_and_open_page
 
     page.should have_content 'Curso cadastrado com sucesso.'
     page.should have_content 'Nome: Ciência da Computação'

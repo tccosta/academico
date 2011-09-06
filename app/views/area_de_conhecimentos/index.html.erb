@@ -1,0 +1,23 @@
+<h1>Listing area_de_conhecimentos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @area_de_conhecimentos.each do |area_de_conhecimento| %>
+  <tr>
+    <td><%= area_de_conhecimento.name %></td>
+    <td><%= link_to 'Show', area_de_conhecimento %></td>
+    <td><%= link_to 'Edit', edit_area_de_conhecimento_path(area_de_conhecimento) %></td>
+    <td><%= link_to 'Destroy', area_de_conhecimento, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Area de conhecimento', new_area_de_conhecimento_path %>
