@@ -11,6 +11,7 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20110901190543) do
+
   create_table "alunos", :force => true do |t|
     t.string   "nome"
     t.string   "email"
@@ -103,7 +104,6 @@ ActiveRecord::Schema.define(:version => 20110901190543) do
     t.string   "area_de_conhecimento"
     t.string   "sub_area_de_conhecimento"
     t.string   "lattes"
-    t.integer  "curso_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
