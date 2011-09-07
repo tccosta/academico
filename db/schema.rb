@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20110901190543) do
     t.string   "area_de_conhecimento"
     t.string   "sub_area_de_conhecimento"
     t.string   "lattes"
+    t.integer  "curso_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
