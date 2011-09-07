@@ -1,4 +1,6 @@
 class Professor < ActiveRecord::Base
+	belongs_to :curso
+
   validates_presence_of :nome, :msg => "O campo nome deve ser preenchido"
   validates_presence_of :matricula, :msg => "O campo matricula deve ser preenchido"
   validates_presence_of :tipo, :msg => "O campo tipo deve ser preenchido"

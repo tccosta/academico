@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @curso.nome %>
+</p>
+
+<p>
+  <b>Sigla:</b>
+  <%= @curso.sigla %>
+</p>
+
+<p>
+  <b>Laboratório:</b>
+  <%= Laboratorio.find(@curso.laboratorio_id).sigla %>
+</p>
+
+<p>
+  <b>Duração:</b>
+  <%= @curso.duracao %>
+</p>
+
+<p>
+  <b>Coordenador:</b>
+  <%= Professor.find(@curso.professor_id).nome %>
+</p>
+
+<p>
+	<b>Áreas de Conhecimento:</b>
+	<% @curso.area_de_conhecimentos.each do |area_de_conhecimento| %>
+  		<%= area_de_conhecimento.name %>
+  <%end%>
+</p>
+
+<%= link_to 'Editar', edit_curso_path(@curso) %> |
+<%= link_to 'Voltar', cursos_path %>

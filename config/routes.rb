@@ -1,4 +1,10 @@
 Academico::Application.routes.draw do
+  resources :laboratorios
+
+  resources :area_de_conhecimentos
+
+  resources :cursos
+
   resources :dados_academicos
 
   resources :formacoes

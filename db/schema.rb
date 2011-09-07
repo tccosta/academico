@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110817033300) do
+ActiveRecord::Schema.define(:version => 20110901190543) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -41,6 +41,30 @@ ActiveRecord::Schema.define(:version => 20110817033300) do
     t.string   "estado_do_certificado_de_reservista"
   end
 
+  create_table "area_de_conhecimento_cursos", :force => true do |t|
+    t.integer  "curso_id"
+    t.integer  "area_de_conhecimento_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "area_de_conhecimentos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cursos", :force => true do |t|
+    t.string   "nome"
+    t.string   "sigla"
+    t.string   "laboratorio"
+    t.integer  "duracao"
+    t.integer  "professor_id"
+    t.integer  "laboratorio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "dados_academicos", :force => true do |t|
     t.integer  "matricula"
     t.string   "curso"
@@ -62,6 +86,13 @@ ActiveRecord::Schema.define(:version => 20110817033300) do
     t.string   "area_de_conhecimento"
     t.string   "titulo_trabalho_de_conclusao"
     t.string   "orientador"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "laboratorios", :force => true do |t|
+    t.string   "nome"
+    t.string   "sigla"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

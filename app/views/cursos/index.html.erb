@@ -1,0 +1,35 @@
+<h1>Listing cursos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Sigla</th>
+    <th>Laboratório</th>
+	  <th>Duração</th>
+	  <th>Coodenador</th>
+    <th>Áreas de Conhecimento</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cursos.each do |curso| %>
+  <tr>
+    <td><%= curso.nome %></td>
+    <td><%= curso.sigla %></td>
+    <td><%= Laboratorio.find(curso.laboratorio_id).sigla %></td>
+    <td><%= curso.duracao %></td>
+	  <td><%= Professor.find(curso.professor_id).nome %></td>
+    <% curso.area_de_conhecimentos.each do |area_de_conhecimento| %>
+  		  <td><%= area_de_conhecimento.name %></td>
+      <%end%>
+    <td><%= link_to 'Exibir', curso %></td>
+    <td><%= link_to 'Editar', edit_curso_path(curso) %></td>
+    <td><%= link_to 'Excluir', curso, :confirm => 'Tem certeza?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Curso', new_curso_path %>
