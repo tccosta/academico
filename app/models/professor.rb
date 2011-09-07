@@ -5,5 +5,7 @@ class Professor < ActiveRecord::Base
   validates_presence_of :area_de_conhecimento, :msg => "O campo Area de conhecimento deve ser preenchido"
   validates_presence_of :sub_area_de_conhecimento, :msg => "O campo Sub area de conhecimento deve ser preenchido"
   validates_presence_of :lattes, :msg => "O campo lattes deve ser preenchido"
+
+
 end
 
