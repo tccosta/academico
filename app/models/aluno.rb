@@ -5,6 +5,8 @@ class Aluno < ActiveRecord::Base
   validates :zona_do_titulo_de_eleitor, :secao_do_titulo_de_eleitor, :data_de_emissao_do_titulo_de_eleitor, :presence => {:message => ' - deve ser preenchida.'}, :if => :e_necessario_certificado_de_reservista?, :unless => :new_record?
   validates :numero_do_certificado_de_reservista,:data_de_emissao_do_certificado_de_reservista, :categoria_do_certificado_de_reservista, :orgao_do_certificado_de_reservista, :estado_do_certificado_de_reservista, :presence => {:message => ' - deve ser preenchido' }, :if => :e_necessario_certificado_de_reservista?, :unless => :new_record?
 
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
+
   SEXO = ['Masculino','Feminino']
   ESTADO_CIVIL = ['Solteiro(a)','Casado(a)','Separado(a)','Divorciado(a)','Viuvo(a)']
   usar_como_cpf :cpf
@@ -21,6 +23,6 @@ class Aluno < ActiveRecord::Base
     end
 
   end
-
+#  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 end
 

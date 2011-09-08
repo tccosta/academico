@@ -12,3 +12,4 @@ class CreateLaboratorios < ActiveRecord::Migration
     drop_table :laboratorios
   end
 end
+

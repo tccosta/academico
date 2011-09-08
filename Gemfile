@@ -16,6 +16,6 @@ group :test do
   gem 'capybara', '~>1.0.0'
   gem 'factory_girl_rails', '~>1.2.0'
   gem 'launchy', '~>2.0.0'
-  
+  gem 'valid_attribute', '~>1.2.0'
 end
 
