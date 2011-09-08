@@ -79,7 +79,7 @@ jQuery(function($){
 
     <div class="field">
       <%= f.label :estado_do_rg %><br />
-      <%= f.text_field :estado_do_rg %>
+      <%= f.select :estado_do_rg, option_estados_for_select %>
     </div>
 
     <div class="field">
@@ -104,7 +104,7 @@ jQuery(function($){
 
     <div class="field">
       <%= f.label :estado_do_titulo_de_eleitor %><br />
-      <%= f.text_field :estado_do_titulo_de_eleitor %>
+      <%= f.select :estado_do_titulo_de_eleitor, option_estados_for_select %>
     </div>
 
     <div class="field">
@@ -134,7 +134,7 @@ jQuery(function($){
 
     <div class="field">
       <%= f.label :estado_do_certificado_de_reservista %><br />
-      <%= f.text_field :estado_do_certificado_de_reservista %>
+      <%= f.select :estado_do_certificado_de_reservista, option_estados_for_select %>
     </div>
 
 
