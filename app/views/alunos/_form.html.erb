@@ -19,46 +19,51 @@ jQuery(function($){
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :email, 'E-mail' %><br />
-    <%= f.text_field :email %>
-  </div>
-  <fieldset>
-  <legend>Filiação</legend>
-    <div class="field">
-      <%= f.label :pai %><br />
-      <%= f.text_field :pai %>
-    </div>
-    <div class="field">
-      <%= f.label :mae, 'Mãe' %><br />
-      <%= f.text_field :mae %>
-    </div>
-  </fieldset>
 
-  <div class="field">
+  <fieldset>
+  <legend>Dados Pessoais</legend>
+    <div class="field">
+      <%= f.label :nome %><br />
+      <%= f.text_field :nome %>
+    </div>
+    <div class="field">
+      <%= f.label :email, 'E-mail' %><br />
+      <%= f.text_field :email %>
+    </div>
+    <fieldset>
+    <legend> Filiação</legend>
+    <div class="field">
+       <%= f.label :pai %><br />
+       <%= f.text_field :pai %>
+    </div>
+    <div class="field">
+       <%= f.label :mae, 'Mãe' %><br />
+       <%= f.text_field :mae %>
+    </div>
+    </fieldset>
+    <div class="field">
     <%= f.label :data_de_nascimento, 'Data de nascimento' %><br />
     <%= f.text_field :data_de_nascimento %>
-  </div>
-  <div class="field">
-    <%= f.label :sexo %><br />
-    <%= f.select :sexo, Aluno::SEXO, {:include_blank => true} %>
-  </div>
-  <div class="field">
-    <%= f.label :nacionalidade %><br />
-    <%= f.text_field :nacionalidade %>
-  </div>
-  <div class="field">
-    <%= f.label :naturalidade %><br />
-    <%= f.text_field :naturalidade %>
-  </div>
-  <div class="field">
-    <%= f.label :estado_civil, 'Estado civil' %><br />
-    <%= f.select :estado_civil, Aluno::ESTADO_CIVIL, {:include_blank => true} %>
-  </div>
+    </div>
+    <div class="field">
+      <%= f.label :sexo %><br />
+      <%= f.select :sexo, Aluno::SEXO, {:include_blank => true} %>
+    </div>
+    <div class="field">
+      <%= f.label :nacionalidade %><br />
+      <%= f.text_field :nacionalidade %>
+    </div>
+    <div class="field">
+      <%= f.label :naturalidade %><br />
+      <%= f.text_field :naturalidade %>
+    </div> 
+    <div class="field">
+      <%= f.label :estado_civil, 'Estado civil' %><br />
+      <%= f.select :estado_civil, Aluno::ESTADO_CIVIL, {:include_blank => true} %>
+    </div>
+
+  </fieldset>
+
 
   <fieldset>
   <legend>Documentação</legend>
@@ -67,76 +72,84 @@ jQuery(function($){
       <%= f.text_field :cpf %>
     </div>
 
-    <div class="field">
-      <%= f.label :rg %><br />
-      <%= f.text_field :rg %>
-    </div>
+    <fieldset>
+     <legend>RG</legend>
+            <div class="field">
+              <%= f.label :rg %><br />
+              <%= f.text_field :rg %>
+            </div>
+            <div class="field">
+              <%= f.label :orgao_emissor_do_rg %><br />
+              <%= f.text_field :orgao_emissor_do_rg %>
+            </div>
 
-    <div class="field">
-      <%= f.label :orgao_emissor_do_rg %><br />
-      <%= f.text_field :orgao_emissor_do_rg %>
-    </div>
+            <div class="field">
+              <%= f.label :estado_do_rg %><br />
+              <%= f.select :estado_do_rg, option_estados_for_select %>
+            </div>
 
-    <div class="field">
-      <%= f.label :estado_do_rg %><br />
-      <%= f.select :estado_do_rg, option_estados_for_select %>
-    </div>
+            <div class="field">
+              <%= f.label :data_de_expedicao_do_rg %><br />
+              <%= f.text_field :data_de_expedicao_do_rg %>
+            </div>
+  </fieldset>
 
-    <div class="field">
-      <%= f.label :data_de_expedicao_do_rg %><br />
-      <%= f.text_field :data_de_expedicao_do_rg %>
-    </div>
 
-    <div class="field">
-      <%= f.label :numero_do_titulo_de_eleitor %><br />
-      <%= f.text_field :numero_do_titulo_de_eleitor %>
-    </div>
+  <fieldset>
+      <legend>Titulo de eleitor</legend>
+          <div class="field">
+            <%= f.label :numero_do_titulo_de_eleitor %><br />
+            <%= f.text_field :numero_do_titulo_de_eleitor %>
+          </div>
 
-    <div class="field">
-      <%= f.label :zona_do_titulo_de_eleitor %><br />
-      <%= f.text_field :zona_do_titulo_de_eleitor %>
-    </div>
+          <div class="field">
+            <%= f.label :zona_do_titulo_de_eleitor %><br />
+            <%= f.text_field :zona_do_titulo_de_eleitor %>
+          </div>
 
-    <div class="field">
-      <%= f.label :secao_do_titulo_de_eleitor %><br />
-      <%= f.text_field :secao_do_titulo_de_eleitor %>
-    </div>
+          <div class="field">
+            <%= f.label :secao_do_titulo_de_eleitor %><br />
+            <%= f.text_field :secao_do_titulo_de_eleitor %>
+          </div>
 
-    <div class="field">
-      <%= f.label :estado_do_titulo_de_eleitor %><br />
-      <%= f.select :estado_do_titulo_de_eleitor, option_estados_for_select %>
-    </div>
+          <div class="field">
+            <%= f.label :estado_do_titulo_de_eleitor %><br />
+            <%= f.select :estado_do_titulo_de_eleitor, option_estados_for_select %>
+          </div>
 
-    <div class="field">
-      <%= f.label :data_de_emissao_do_titulo_de_eleitor %><br />
-      <%= f.text_field :data_de_emissao_do_titulo_de_eleitor %>
-    </div>
+          <div class="field">
+            <%= f.label :data_de_emissao_do_titulo_de_eleitor %><br />
+            <%= f.text_field :data_de_emissao_do_titulo_de_eleitor %>
+          </div>
+  </fieldset>
 
-    <div class="field">
-      <%= f.label :numero_do_certificado_de_reservista %><br />
-      <%= f.text_field :numero_do_certificado_de_reservista %>
-    </div>
+   <fieldset>
+     <legend>Certificado de Reservista</legend>
+         <div class="field">
+            <%= f.label :numero_do_certificado_de_reservista %><br />
+            <%= f.text_field :numero_do_certificado_de_reservista %>
+          </div>
 
-    <div class="field">
-      <%= f.label :orgao_do_certificado_de_reservista %><br />
-      <%= f.text_field :orgao_do_certificado_de_reservista %>
-    </div>
+          <div class="field">
+            <%= f.label :orgao_do_certificado_de_reservista %><br />
+            <%= f.text_field :orgao_do_certificado_de_reservista %>
+          </div>
 
-    <div class="field">
-      <%= f.label :categoria_do_certificado_de_reservista %><br />
-      <%= f.text_field :categoria_do_certificado_de_reservista %>
-    </div>
+          <div class="field">
+            <%= f.label :categoria_do_certificado_de_reservista %><br />
+            <%= f.text_field :categoria_do_certificado_de_reservista %>
+          </div>
 
-    <div class="field">
-      <%= f.label :data_de_emissao_do_certificado_de_reservista %><br />
-      <%= f.text_field :data_de_emissao_do_certificado_de_reservista %>
-    </div>
+          <div class="field">
+            <%= f.label :data_de_emissao_do_certificado_de_reservista %><br />
+            <%= f.text_field :data_de_emissao_do_certificado_de_reservista %>
+          </div>
 
-    <div class="field">
-      <%= f.label :estado_do_certificado_de_reservista %><br />
-      <%= f.select :estado_do_certificado_de_reservista, option_estados_for_select %>
-    </div>
-
+          <div class="field">
+            <%= f.label :estado_do_certificado_de_reservista %><br />
+            <%= f.select :estado_do_certificado_de_reservista, option_estados_for_select %>
+          </div>
+    </fieldset>
 
   </fieldset>
   <div class="actions">

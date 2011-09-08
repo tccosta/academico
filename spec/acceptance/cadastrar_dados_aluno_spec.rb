@@ -32,7 +32,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Data de emissao do certificado de reservista', :with => '10/02/2009'
     select('Rio de Janeiro', :from => 'Estado do certificado de reservista')
     click_button 'Salvar'
-
+#save_and_open_page
     page.should have_content 'Aluno cadastrado com sucesso.'
     page.should have_content 'Nome: Kirill'
     page.should have_content 'E-mail: kirillsk8@gmail.com'
