@@ -13,7 +13,7 @@ feature 'cadastrar dados academicos do aluno' do
     check 'Cotista'
     fill_in 'Tipo de cota', :with => 'Escola Publica'
     fill_in 'Link do Curriculum Lattes', :with => 'http://lattes.cnpq.br/1619508753128532'
-    click_button 'Create Dados academico'
+    click_button 'Salvar'
 
     page.should have_content 'Dado Academico cadastrado com sucesso.'
     page.should have_content 'Matricula: 108123928'
