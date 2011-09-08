@@ -23,12 +23,12 @@
     <td><%= professor.lattes %></td>
     <td><%= link_to 'Mostrar', professor %></td>
     <td><%= link_to 'Editar', edit_professor_path(professor) %></td>
-    <td><%= link_to 'Deletar', professor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Deletar', professor, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Professor', new_professor_path %>
+<%= link_to 'Novo Professor', new_professor_path %>
 

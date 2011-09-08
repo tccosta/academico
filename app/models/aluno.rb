@@ -9,6 +9,7 @@ class Aluno < ActiveRecord::Base
   ESTADO_CIVIL = ['Solteiro(a)','Casado(a)','Separado(a)','Divorciado(a)','Viuvo(a)']
   usar_como_cpf :cpf
 
+
   def e_necessario_certificado_de_reservista?
     return false if data_de_nascimento.blank?
     age = Date.today.year - data_de_nascimento.year
@@ -21,6 +22,6 @@ class Aluno < ActiveRecord::Base
     end
 
   end
-
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 end
 

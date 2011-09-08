@@ -7,7 +7,7 @@ feature 'cadastrar dados pessoais do aluno' do
     visit new_aluno_path
     #DADOS PESSOAIS DO ALUNO
     fill_in 'Nome', :with => 'Kirill'
-    fill_in 'E-mail', :with => 'kirillsk8@gmail.com'
+    fill_in 'E-mail', :with => 'kirillsk8'
     fill_in 'Pai', :with => 'Sergio'
     fill_in 'Mãe', :with => 'Elena'
     fill_in 'Data de nascimento', :with => '22/02/1988'
@@ -33,9 +33,10 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Estado do certificado de reservista', :with => 'RJ'
     click_button 'Salvar'
 
+    save_and_open_page
     page.should have_content 'Aluno cadastrado com sucesso.'
     page.should have_content 'Nome: Kirill'
-    page.should have_content 'E-mail: kirillsk8@gmail.com'
+    page.should have_content 'E-mail: kirillsk8'
     page.should have_content 'Filiação'
     page.should have_content 'Pai: Sergio'
     page.should have_content 'Mãe: Elena'
