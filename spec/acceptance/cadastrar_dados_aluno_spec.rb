@@ -33,6 +33,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Estado do certificado de reservista', :with => 'RJ'
     click_button 'Salvar'
 
+
     page.should have_content 'Aluno cadastrado com sucesso.'
     page.should have_content 'Nome: Kirill'
     page.should have_content 'E-mail: kirillsk8@gmail.com'
@@ -81,7 +82,6 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Cpf - deve ser preenchido.'
     page.should have_content 'Rg - deve ser preenchido.'
     page.should have_content 'Data de expedicao do rg - deve ser preenchida.'
-    page.should have_content 'Filiação'
     page.should have_content 'Voltar'
   end
 
