@@ -19,21 +19,20 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Cpf', :with => '12797827732'
     fill_in 'Rg', :with => '209912310'
     fill_in 'Orgao emissor do rg', :with => 'Detran'
-    fill_in 'Estado do rg', :with => 'RJ'
+    select('Rio de Janeiro', :from => 'Estado do rg')
     fill_in 'Data de expedicao do rg', :with => '20/09/2009'
     fill_in 'Numero do titulo de eleitor', :with => '12121212121'
     fill_in 'Zona do titulo de eleitor', :with => '98'
     fill_in 'Secao do titulo de eleitor', :with => '103'
-    fill_in 'Estado do titulo de eleitor', :with => 'RJ'
+    select('Rio de Janeiro', :from => 'Estado do titulo de eleitor')
     fill_in 'Data de emissao do titulo de eleitor', :with => '10/01/2009'
     fill_in 'Numero do certificado de reservista', :with => '324343'
     fill_in 'Orgão do Certificado de Reservista', :with => 'exercito'
     fill_in 'Categoria do certificado de reservista', :with => 'a'
     fill_in 'Data de emissao do certificado de reservista', :with => '10/02/2009'
-    fill_in 'Estado do certificado de reservista', :with => 'RJ'
+    select('Rio de Janeiro', :from => 'Estado do certificado de reservista')
     click_button 'Salvar'
-
-    save_and_open_page
+#save_and_open_page
     page.should have_content 'Aluno cadastrado com sucesso.'
     page.should have_content 'Nome: Kirill'
     page.should have_content 'E-mail: kirillsk8@gmail.com'
@@ -72,7 +71,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Nacionalidade', :with => 'Brasileiro'
     fill_in 'Naturalidade', :with => 'Russo'
     fill_in 'Orgao emissor do rg', :with => 'Detran'
-    fill_in 'Estado do rg', :with => 'RJ'
+    select('Rio de Janeiro', :from => 'Estado do rg')
     click_button 'Salvar'
 
     page.should have_content 'Novo aluno'
