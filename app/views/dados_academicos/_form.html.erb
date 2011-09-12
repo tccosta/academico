@@ -24,7 +24,7 @@ jQuery(function($){
     <%= f.input :matricula , :label => 'Matrícula' %>
     <%= f.input :curso, :label => 'Curso', :input_html => {:size => 30} %>
     <%= f.input :semestre, :label => 'Semestre', :input_html => {:size => 2} %>
-    <%= f.input :forma_de_ingresso, :label => 'Forma de Ingresso', :input_html => {:size => 20} %>
+    <%= f.input :forma_de_ingresso, :label => 'Forma de Ingresso', :collection => DadosAcademico::FORMA_DE_INGRESSO %>
     <%= f.input :data_da_prova_do_ingresso , :label => 'Data do vestibular/ENEM', :as => :string, :input_html => {:size => 8} %>
     <fieldset>
     <%= f.input :cotista , :label => 'Cotista', :in => [true, false] %>

@@ -8,7 +8,7 @@ feature 'cadastrar dados academicos do aluno' do
     fill_in 'Matrícula', :with => '108123928'
     fill_in 'Curso', :with => 'Ciência da Computação'
     fill_in 'Semestre', :with => '201102'
-    fill_in 'Forma de Ingresso', :with => 'ENEM'
+    select('Vestibular', :from => 'Forma de Ingresso')
     fill_in 'Data do vestibular/ENEM', :with => '22/12/2010'
     check 'Cotista'
     fill_in 'Tipo de cota', :with => 'Escola Publica'
@@ -19,7 +19,7 @@ feature 'cadastrar dados academicos do aluno' do
     page.should have_content 'Matricula: 108123928'
     page.should have_content 'Curso: Ciência da Computação'
     page.should have_content 'Semestre: 201102'
-    page.should have_content 'Forma de ingresso: ENEM'
+    page.should have_content 'Forma de Ingresso: Vestibular'
     page.should have_content 'Data do vestibular/ENEM: 22/12/2010'
     page.should have_content 'Cotista: Sim'
     page.should have_content 'Tipo de cota: Escola Publica'
