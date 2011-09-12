@@ -17,19 +17,19 @@
   </div>
   <div class="field">
     <%= f.label :curso %><br />
-    <%= f.text_field :curso %>
+    <%= f.text_field :curso , :size => 20 %>
   </div>
   <div class="field">
     <%= f.label :semestre %><br />
-    <%= f.text_field :semestre %>
+    <%= f.text_field :semestre,:size => 3 %>
   </div>
   <div class="field">
     <%= f.label :forma_de_ingresso,'Forma de Ingresso' %><br />
-    <%= f.text_field :forma_de_ingresso %>
+    <%= f.text_field :forma_de_ingresso, :size => 20 %>
   </div>
   <div class="field">
     <%= f.label :data_da_prova_do_ingresso,'Data do vestibular/ENEM' %><br />
-    <%= f.text_field :data_da_prova_do_ingresso %>
+    <%= f.text_field :data_da_prova_do_ingresso, :size => 6 %>
   </div>
   <div class="field">
     <%= f.label :cotista %><br />
@@ -37,11 +37,11 @@
   </div>
   <div class="field">
     <%= f.label :tipo_de_cota %><br />
-    <%= f.text_field :tipo_de_cota %>
+    <%= f.text_field :tipo_de_cota, :size => 20 %>
   </div>
   <div class="field">
     <%= f.label :link_do_lattes, 'Link do Curriculum Lattes' %><br />
-    <%= f.text_field :link_do_lattes %>
+    <%= f.text_field :link_do_lattes, :size => 100 %>
   </div>
   <div class="actions">
     <%= f.submit 'Salvar' %>

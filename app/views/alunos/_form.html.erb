@@ -8,150 +8,50 @@ jQuery(function($){
 });
 </script>
 
-<%= form_for(@aluno) do |f| %>
-  <% if @aluno.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @aluno.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <fieldset>
-  <legend>Dados Pessoais</legend>
-    <div class="field">
-      <%= f.label :nome %><br />
-      <%= f.text_field :nome %>
-    </div>
-    <div class="field">
-      <%= f.label :email, 'E-mail' %><br />
-      <%= f.text_field :email %>
-    </div>
+<%= semantic_form_for(@aluno) do |f| %>
+<fieldset>
+    <legend> Documentação</legend>
+    <%= f.input :nome , :label => 'Nome' %>
+    <%= f.input :email, :label => 'E-mail' %>
     <fieldset>
     <legend> Filiação</legend>
-    <div class="field">
-       <%= f.label :pai %><br />
-       <%= f.text_field :pai %>
-    </div>
-    <div class="field">
-       <%= f.label :mae, 'Mãe' %><br />
-       <%= f.text_field :mae %>
-    </div>
+        <%= f.input :pai, :label => 'Pai' %>
+        <%= f.input :mae, :label => 'Mãe' %>
     </fieldset>
-    <div class="field">
-    <%= f.label :data_de_nascimento, 'Data de nascimento' %><br />
-    <%= f.text_field :data_de_nascimento %>
-    </div>
-    <div class="field">
-      <%= f.label :sexo %><br />
-      <%= f.select :sexo, Aluno::SEXO, {:include_blank => true} %>
-    </div>
-    <div class="field">
-      <%= f.label :nacionalidade %><br />
-      <%= f.text_field :nacionalidade %>
-    </div>
-    <div class="field">
-      <%= f.label :naturalidade %><br />
-      <%= f.text_field :naturalidade %>
-    </div>
-    <div class="field">
-      <%= f.label :estado_civil, 'Estado civil' %><br />
-      <%= f.select :estado_civil, Aluno::ESTADO_CIVIL, {:include_blank => true} %>
-    </div>
-
-  </fieldset>
-
-
-  <fieldset>
-  <legend>Documentação</legend>
-    <div class="field">
-      <%= f.label :cpf %><br />
-      <%= f.text_field :cpf %>
-    </div>
-
+    <%= f.input :data_de_nascimento, :label => 'Data de nascimento' , :as => :string, :input_html => {:size => 8} %>
+    <%= f.input :sexo, :collection => Aluno::SEXO %>
+    <%= f.input :nacionalidade %>
+    <%= f.input :naturalidade %>
+    <%= f.input :estado_civil, :collection => Aluno::ESTADO_CIVIL, :label => "Estado civil" %>
+</fieldset>
+ <fieldset>
+    <legend> Documentação</legend>
+    <%= f.input :cpf, :input_html => {:size => 11} %>
     <fieldset>
-     <legend>RG</legend>
-            <div class="field">
-              <%= f.label :rg %><br />
-              <%= f.text_field :rg %>
-            </div>
-            <div class="field">
-              <%= f.label :orgao_emissor_do_rg %><br />
-              <%= f.text_field :orgao_emissor_do_rg %>
-            </div>
-
-            <div class="field">
-              <%= f.label :estado_do_rg %><br />
-              <%= f.select :estado_do_rg, option_estados_for_select %>
-            </div>
-
-            <div class="field">
-              <%= f.label :data_de_expedicao_do_rg %><br />
-              <%= f.text_field :data_de_expedicao_do_rg %>
-            </div>
-  </fieldset>
-
-
-  <fieldset>
-      <legend>Titulo de eleitor</legend>
-          <div class="field">
-            <%= f.label :numero_do_titulo_de_eleitor %><br />
-            <%= f.text_field :numero_do_titulo_de_eleitor %>
-          </div>
-
-          <div class="field">
-            <%= f.label :zona_do_titulo_de_eleitor %><br />
-            <%= f.text_field :zona_do_titulo_de_eleitor %>
-          </div>
-
-          <div class="field">
-            <%= f.label :secao_do_titulo_de_eleitor %><br />
-            <%= f.text_field :secao_do_titulo_de_eleitor %>
-          </div>
-
-          <div class="field">
-            <%= f.label :estado_do_titulo_de_eleitor %><br />
-            <%= f.select :estado_do_titulo_de_eleitor, option_estados_for_select %>
-          </div>
-
-          <div class="field">
-            <%= f.label :data_de_emissao_do_titulo_de_eleitor %><br />
-            <%= f.text_field :data_de_emissao_do_titulo_de_eleitor %>
-          </div>
-  </fieldset>
-
+    <legend> RG </legend>
+      <%= f.input :rg, :input_html => {:size => 9} %>
+      <%= f.input :orgao_emissor_do_rg %>
+      <%= f.input :estado_do_rg, :label => 'Estado do rg', :collection => option_estados_for_select %>
+      <%= f.input :data_de_expedicao_do_rg , :as => :string, :input_html => {:size => 7} %>
+   </fieldset>
    <fieldset>
-     <legend>Certificado de Reservista</legend>
-         <div class="field">
-            <%= f.label :numero_do_certificado_de_reservista %><br />
-            <%= f.text_field :numero_do_certificado_de_reservista %>
-          </div>
-
-          <div class="field">
-            <%= f.label :orgao_do_certificado_de_reservista %><br />
-            <%= f.text_field :orgao_do_certificado_de_reservista %>
-          </div>
-
-          <div class="field">
-            <%= f.label :categoria_do_certificado_de_reservista %><br />
-            <%= f.text_field :categoria_do_certificado_de_reservista %>
-          </div>
-
-          <div class="field">
-            <%= f.label :data_de_emissao_do_certificado_de_reservista %><br />
-            <%= f.text_field :data_de_emissao_do_certificado_de_reservista %>
-          </div>
-
-          <div class="field">
-            <%= f.label :estado_do_certificado_de_reservista %><br />
-            <%= f.select :estado_do_certificado_de_reservista, option_estados_for_select %>
-          </div>
-    </fieldset>
-
+    <legend> Titulo de Eleitor </legend>
+      <%= f.input :numero_do_titulo_de_eleitor, :input_html => {:size => 12} %>
+      <%= f.input :zona_do_titulo_de_eleitor, :input_html => {:size => 3} %>
+      <%= f.input :secao_do_titulo_de_eleitor, :input_html => {:size => 4} %>
+      <%= f.input :estado_do_titulo_de_eleitor, :collection => option_estados_for_select %>
+      <%= f.input :data_de_emissao_do_titulo_de_eleitor , :as => :string, :input_html => {:size => 8} %>
   </fieldset>
+   <fieldset>
+    <legend> Certificado de Reservista </legend>
+    <%= f.input :numero_do_certificado_de_reservista, :input_html => {:size => 6}  %>
+    <%= f.input :orgao_do_certificado_de_reservista, :label => "Orgão do Certificado de Reservista" %>
+    <%= f.input :categoria_do_certificado_de_reservista, :input_html => {:size => 1} %>
+    <%= f.input :data_de_emissao_do_certificado_de_reservista , :as => :string, :input_html => {:size => 8} %>
+    <%= f.input :estado_do_certificado_de_reservista, :collection => option_estados_for_select  %>
+  </fieldset>
+
+
   <div class="actions">
     <%= f.submit 'Salvar' %>
   </div>
