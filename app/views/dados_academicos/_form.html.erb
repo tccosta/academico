@@ -1,4 +1,12 @@
-<%= form_for(@dados_academico) do |f| %>
+<script type='text/javascript'>
+jQuery(function($){
+   $("#data_da_prova_do_ingresso").mask("99/99/9999");
+
+});
+</script>
+
+
+<%= semantic_form_for(@dados_academico) do |f| %>
   <% if @dados_academico.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dados_academico.errors.count, "error") %> prohibited this dados_academico from being saved:</h2>
@@ -11,40 +19,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :matricula, 'Matrícula' %><br />
-    <%= f.text_field :matricula %>
-  </div>
-  <div class="field">
-    <%= f.label :curso %><br />
-    <%= f.text_field :curso , :size => 20 %>
-  </div>
-  <div class="field">
-    <%= f.label :semestre %><br />
-    <%= f.text_field :semestre,:size => 3 %>
-  </div>
-  <div class="field">
-    <%= f.label :forma_de_ingresso,'Forma de Ingresso' %><br />
-    <%= f.text_field :forma_de_ingresso, :size => 20 %>
-  </div>
-  <div class="field">
-    <%= f.label :data_da_prova_do_ingresso,'Data do vestibular/ENEM' %><br />
-    <%= f.text_field :data_da_prova_do_ingresso, :size => 6 %>
-  </div>
-  <div class="field">
-    <%= f.label :cotista %><br />
-    <%= f.check_box :cotista %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo_de_cota %><br />
-    <%= f.text_field :tipo_de_cota, :size => 20 %>
-  </div>
-  <div class="field">
-    <%= f.label :link_do_lattes, 'Link do Curriculum Lattes' %><br />
-    <%= f.text_field :link_do_lattes, :size => 100 %>
-  </div>
-  <div class="actions">
+<fieldset>
+    <legend> Dados </legend>
+    <%= f.input :matricula , :label => 'Matrícula' %>
+    <%= f.input :curso, :label => 'Curso', :input_html => {:size => 30} %>
+    <%= f.input :semestre, :label => 'Semestre', :input_html => {:size => 2} %>
+    <%= f.input :forma_de_ingresso, :label => 'Forma de Ingresso', :input_html => {:size => 20} %>
+    <%= f.input :data_da_prova_do_ingresso , :label => 'Data do vestibular/ENEM', :as => :string, :input_html => {:size => 8} %>
+    <fieldset>
+    <%= f.input :cotista , :label => 'Cotista', :in => [true, false] %>
+    <%= f.input :tipo_de_cota , :label => 'Tipo de cota', :input_html => {:size => 20} %>
+    </fieldset>
+    <%= f.input :link_do_lattes , :label => 'Link do Curriculum Lattes', :input_html => {:size => 100} %>
+    <div class="actions">
     <%= f.submit 'Salvar' %>
-  </div>
+    </div>
+  <!--   <%= f.input :cotista , :label => 'Cotista', :as => :select %> -->
+
+    </fieldset>
+
+
 <% end %>
 
