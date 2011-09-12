@@ -4,9 +4,12 @@ require 'spec_helper'
 
 feature 'cadastrar dados academicos do aluno' do
   scenario 'cadastro normal' do
+    Factory.create :curso
+    
     visit new_dados_academico_path
+    
     fill_in 'Matrícula', :with => '108123928'
-    fill_in 'Curso', :with => 'Ciência da Computação'
+    select 'Ciência da Computação', :from => 'Curso'
     fill_in 'Semestre', :with => '201102'
     select('Vestibular', :from => 'Forma de Ingresso')
     fill_in 'Data do vestibular/ENEM', :with => '22/12/2010'

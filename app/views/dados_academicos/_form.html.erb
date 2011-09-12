@@ -22,7 +22,7 @@ jQuery(function($){
 <fieldset>
     <legend> Dados </legend>
     <%= f.input :matricula , :label => 'Matrícula' %>
-    <%= f.input :curso, :label => 'Curso', :input_html => {:size => 30} %>
+    <%= f.input :curso, :label => 'Curso', :collection => Curso.all.map {|c| c.nome } %>
     <%= f.input :semestre, :label => 'Semestre', :input_html => {:size => 2} %>
     <%= f.input :forma_de_ingresso, :label => 'Forma de Ingresso', :collection => DadosAcademico::FORMA_DE_INGRESSO %>
     <%= f.input :data_da_prova_do_ingresso , :label => 'Data do vestibular/ENEM', :as => :string, :input_html => {:size => 8} %>
