@@ -5,16 +5,16 @@ require 'spec_helper'
 feature 'cadastrar dados academicos do aluno' do
   scenario 'cadastro normal' do
     Factory.create :curso
-    
+
     visit new_dados_academico_path
-    
+
     fill_in 'Matrícula', :with => '108123928'
     select 'Ciência da Computação', :from => 'Curso'
     fill_in 'Semestre', :with => '201102'
     select('Vestibular', :from => 'Forma de Ingresso')
     fill_in 'Data do vestibular/ENEM', :with => '22/12/2010'
     check 'Cotista'
-    fill_in 'Tipo de cota', :with => 'Escola Publica'
+    select('Ensino Público', :from => 'Tipo de cota')
     fill_in 'Link do Curriculum Lattes', :with => 'http://lattes.cnpq.br/1619508753128532'
     click_button 'Salvar'
 
@@ -25,9 +25,27 @@ feature 'cadastrar dados academicos do aluno' do
     page.should have_content 'Forma de Ingresso: Vestibular'
     page.should have_content 'Data do vestibular/ENEM: 22/12/2010'
     page.should have_content 'Cotista: Sim'
-    page.should have_content 'Tipo de cota: Escola Publica'
+    page.should have_content 'Tipo de cota: Ensino Público'
     page.should have_content 'Link do lattes: http://lattes.cnpq.br/1619508753128532'
     page.should have_content 'Editar'
+    page.should have_content 'Voltar'
+  end
+  scenario 'cadastro normal' do
+    Factory.create :curso
+
+    visit new_dados_academico_path
+
+    fill_in 'Matrícula', :with => '108123928'
+    select 'Ciência da Computação', :from => 'Curso'
+    fill_in 'Semestre', :with => '201102'
+    select('Vestibular', :from => 'Forma de Ingresso')
+    fill_in 'Data do vestibular/ENEM', :with => '30/02/2010'
+    check 'Cotista'
+    select('Ensino Público', :from => 'Tipo de cota')
+    fill_in 'Link do Curriculum Lattes', :with => 'http://lattes.cnpq.br/1619508753128532'
+    click_button 'Salvar'
+
+    page.should have_content 'Data da prova do ingresso - deve ser preenchida ou e invalida'
     page.should have_content 'Voltar'
   end
 

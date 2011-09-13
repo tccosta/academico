@@ -28,7 +28,7 @@ jQuery(function($){
     <%= f.input :data_da_prova_do_ingresso , :label => 'Data do vestibular/ENEM', :as => :string, :input_html => {:size => 8} %>
     <fieldset>
     <%= f.input :cotista , :label => 'Cotista', :in => [true, false] %>
-    <%= f.input :tipo_de_cota , :label => 'Tipo de cota', :input_html => {:size => 20} %>
+    <%= f.input :tipo_de_cota , :label => 'Tipo de cota', :collection => DadosAcademico::TIPO_DE_COTA %>
     </fieldset>
     <%= f.input :link_do_lattes , :label => 'Link do Curriculum Lattes', :input_html => {:size => 100} %>
     <div class="actions">
