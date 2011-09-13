@@ -1,13 +1,13 @@
+#coding: UTF-8
 class Professor < ActiveRecord::Base
 	has_one :curso
 
-  validates_presence_of :nome, :msg => "O campo nome deve ser preenchido"
-  validates_presence_of :matricula, :msg => "O campo matricula deve ser preenchido"
-  validates_presence_of :tipo, :msg => "O campo tipo deve ser preenchido"
-  validates_presence_of :area_de_conhecimento, :msg => "O campo Area de conhecimento deve ser preenchido"
-  validates_presence_of :sub_area_de_conhecimento, :msg => "O campo Sub area de conhecimento deve ser preenchido"
-  validates_presence_of :lattes, :msg => "O campo lattes deve ser preenchido"
+  camposMasc = { :nome => "Nome", :tipo => "Tipo" ,:lattes => "Link do curriculo lattes"}
+  camposMasc.each { |campo| validates campo[0], :presence => { :message => campo[1] + ' - deve ser preenchido.'}}
 
+  camposFem = {:matricula => "Matriculua",:area_de_conhecimento => "Área de conhecimento" ,:sub_area_de_conhecimento => "Sub-área de conhecimento"}
+  camposFem.each { |campo| validates campo[0], :presence => { :message => campo[1] + ' - deve ser preenchida.'}}
 
+  TIPOS = ['Titular','Associado']
 end
 
