@@ -7,5 +7,7 @@ class Professor < ActiveRecord::Base
 
   camposFem = {:matricula => "Matriculua",:area_de_conhecimento => "Área de conhecimento" ,:sub_area_de_conhecimento => "Sub-área de conhecimento"}
   camposFem.each { |campo| validates campo[0], :presence => { :message => campo[1] + ' - deve ser preenchida.'}}
+
+  TIPOS = ['Titular','Associado']
 end
 

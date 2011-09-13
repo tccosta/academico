@@ -3,7 +3,7 @@
     <legend>Dados</legend>
     <%= prof.input :nome, :label => 'Nome' %>
     <%= prof.input :matricula, :label => 'Matrícula' %>
-    <%= prof.input :tipo, :label => 'Tipo' %>
+    <%= prof.input :tipo , :label => 'Tipo', :collection => Professor::TIPOS %>
     <%= prof.input :area_de_conhecimento, :label => 'Área de conhecimento' %>
     <%= prof.input :sub_area_de_conhecimento, :label => 'Sub-área de conhecimento' %>
     <%= prof.input :lattes, :label => 'Link do curriculo lattes' %>
