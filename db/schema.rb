@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20110912155858) do
   create_table "cursos", :force => true do |t|
     t.string   "nome"
     t.string   "sigla"
-    t.string   "laboratorio"
     t.integer  "duracao"
     t.integer  "professor_id"
     t.integer  "laboratorio_id"
