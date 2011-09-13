@@ -10,6 +10,19 @@ FactoryGirl.define do
    lattes "http://"
   end
 
+  factory :laboratorio do
+    nome 'Laboratório de Ciências Matemáticas'
+    sigla 'LCMAT'
+  end
+    
+  factory :curso do
+    nome 'Ciência da Computação'
+    sigla 'CCI'
+    duracao 10
+    association :professor
+    association :laboratorio
+  end
+  
   factory :aluno do
     nome 'Kirill Lassounski'
     email 'kirillsk8@gmail.com'
