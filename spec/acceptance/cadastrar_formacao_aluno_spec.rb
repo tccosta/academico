@@ -72,5 +72,15 @@ feature 'cadastrar a formação do aluno' do
     page.should have_content 'Ano de Início - deve ser preenchido'
   end
 
+  scenario 'Ano de Início e Conclusão não numéricos' do
+    visit new_formacao_path
+    fill_in 'Ano de Início', :with => '20,5'
+    fill_in 'Ano de Conclusão', :with => 'abcd'
+    click_button 'Salvar'
+
+    page.should have_content 'Ano de Início - deve ser do tipo número inteiro'
+    page.should have_content 'Ano de Conclusão - deve ser do tipo número inteiro'
+  end
+
 end
 

@@ -1,16 +1,13 @@
 Academico::Application.routes.draw do
   resources :laboratorios
-
   resources :area_de_conhecimentos
-
   resources :cursos
-
   resources :dados_academicos
-
   resources :formacoes
-
   resources :alunos
   resources :professores
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -68,5 +65,7 @@ Academico::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  root :to => "principal#index"
+
 end
 

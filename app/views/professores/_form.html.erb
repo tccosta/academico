@@ -1,42 +1,16 @@
-<%= form_for(@professor) do |f| %>
-  <% if @professor.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@professor.errors.count, "error") %> prohibited this professor from being saved:</h2>
-
-      <ul>
-      <% @professor.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= semantic_form_for(@professor) do |prof|%>
+  <fieldset>
+    <legend>Dados</legend>
+    <%= prof.input :nome, :label => 'Nome' %>
+    <%= prof.input :matricula, :label => 'Matrícula' %>
+    <%= prof.input :tipo , :label => 'Tipo', :collection => Professor::TIPOS %>
+    <%= prof.input :area_de_conhecimento, :label => 'Área de conhecimento' %>
+    <%= prof.input :sub_area_de_conhecimento, :label => 'Sub-área de conhecimento' %>
+    <%= prof.input :lattes, :label => 'Link do curriculo lattes' %>
+    <div class="actions">
+      <%= prof.submit 'Salvar' %>
     </div>
-  <% end %>
+  </fieldset>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :matricula, 'Matrícula' %><br />
-    <%= f.text_field :matricula %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
-  </div>
-  <div class="field">
-    <%= f.label :area_de_conhecimento %><br />
-    <%= f.text_field :area_de_conhecimento %>
-  </div>
-  <div class="field">
-    <%= f.label :sub_area_de_conhecimento %><br />
-    <%= f.text_field :sub_area_de_conhecimento %>
-  </div>
-  <div class="field">
-    <%= f.label :lattes %><br />
-    <%= f.text_field :lattes %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Salvar' %>
-  </div>
 <% end %>
 
