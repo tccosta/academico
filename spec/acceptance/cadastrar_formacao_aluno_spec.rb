@@ -67,9 +67,9 @@ feature 'cadastrar a formação do aluno' do
     visit new_formacao_path
     click_button 'Salvar'
 
-    page.should have_content 'Instituição - deve ser preenchida.'
-    page.should have_content 'Tipo - deve ser preenchido.'
-    page.should have_content 'Ano de Início - deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
   end
 
   scenario 'Ano de Início e Conclusão não numéricos' do
