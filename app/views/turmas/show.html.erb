@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Semestre letivo:</b>
+  <%= @turma.semestre_letivo %>
+</p>
+
+<p>
+  <b>Disciplina:</b>
+  <%= @turma.disciplina.nome %>
+</p>
+
+<p>
+  <b>Professor:</b>
+  <%= @turma.professor.nome %>
+</p>
+
+<p>
+  <b>Horário:</b>
+  <%= @turma.horario.strftime("%H:%M") %>
+</p>
+
+
+<%= link_to 'Editar', edit_turma_path(@turma) %> |
+<%= link_to 'Voltar', turmas_path %>
+
