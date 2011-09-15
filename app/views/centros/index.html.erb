@@ -1,0 +1,26 @@
+<h1>Listando centros</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Sigla</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @centros.each do |centro| %>
+  <tr>
+    <td><%= centro.nome %></td>
+    <td><%= centro.sigla %></td>
+    <td><%= link_to 'Mostrar', centro %></td>
+    <td><%= link_to 'Editar', edit_centro_path(centro) %></td>
+    <td><%= link_to 'Excluir', centro, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo Centro', new_centro_path %>
+

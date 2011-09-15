@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @centro.nome %>
+</p>
+
+<p>
+  <b>Sigla:</b>
+  <%= @centro.sigla %>
+</p>
+
+
+<%= link_to 'Editar', edit_centro_path(@centro) %> |
+<%= link_to 'Voltar', centros_path %>
+
