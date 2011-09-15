@@ -23,8 +23,6 @@ FactoryGirl.define do
     association :laboratorio
   end
 
-<<<<<<< HEAD
-=======
   factory :disciplina do
     codigo 'COMP0112'
     nome 'Desenvolvimento Ágil'
@@ -33,7 +31,6 @@ FactoryGirl.define do
     numero_maximo_de_aluno '25'
   end
 
->>>>>>> 15f42b21b6dcf65a3f7c7df7f9e6616798d6ad38
   factory :aluno do
     nome 'Kirill Lassounski'
     email 'kirillsk8@gmail.com'
