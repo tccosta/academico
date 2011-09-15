@@ -10,7 +10,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20110915183908) do
 
   create_table "alunos", :force => true do |t|
@@ -141,4 +140,3 @@ ActiveRecord::Schema.define(:version => 20110915183908) do
   end
 
 end
-
