@@ -49,6 +49,7 @@ feature 'cadastrar dados academicos do aluno' do
     page.should have_content 'Voltar'
   end
 
+
 #  scenario 'cadastro incompleto' do
 #    visit new_aluno_path
 #    fill_in 'E-mail', :with => 'kirillsk8@gmail.com'

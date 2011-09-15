@@ -1,5 +1,5 @@
 class Aluno < ActiveRecord::Base
-
+  has_many:formacoes
   belongs_to:curso
 
   validates_presence_of :nome, :pai, :mae, :sexo, :estado_civil, :cpf, :rg, :orgao_emissor_do_rg, :estado_do_rg, 
