@@ -13,7 +13,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Data de nascimento', :with => '22/02/1988'
     select('Masculino', :from => 'Sexo')
     fill_in 'Nacionalidade', :with => 'Brasileiro'
-    fill_in 'Naturalidade', :with => 'Russo'
+    select('Rio de Janeiro', :from => 'Naturalidade')
     select('Solteiro(a)', :from => 'Estado civil')
     #DADOS DE DOCUMENTAÇÃO DO ALUNO
     fill_in 'Cpf', :with => '12797827732'
@@ -42,7 +42,7 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Data de nascimento: 22/02/1988'
     page.should have_content 'Sexo: Masculino'
     page.should have_content 'Nacionalidade: Brasileiro'
-    page.should have_content 'Naturalidade: Russo'
+    page.should have_content 'Naturalidade: RJ'
     page.should have_content 'Estado civil: Solteiro(a)'
     page.should have_content 'CPF: 127.978.277-32'
     page.should have_content 'RG: 209912310'
@@ -69,7 +69,7 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Pai', :with => 'Sergio'
     fill_in 'Mãe', :with => 'Elena'
     fill_in 'Nacionalidade', :with => 'Brasileiro'
-    fill_in 'Naturalidade', :with => 'Russo'
+    select('Rio de Janeiro', :from => 'Naturalidade')
     fill_in 'Orgao emissor do rg', :with => 'Detran'
     select('Rio de Janeiro', :from => 'Estado do rg')
     click_button 'Salvar'

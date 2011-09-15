@@ -21,7 +21,7 @@ jQuery(function($){
     <%= f.input :data_de_nascimento, :label => 'Data de nascimento' , :as => :string, :input_html => {:size => 8} %>
     <%= f.input :sexo, :collection => Aluno::SEXO %>
     <%= f.input :nacionalidade %>
-    <%= f.input :naturalidade %>
+    <%= f.input :naturalidade , :collection => option_estados_for_select%>
     <%= f.input :estado_civil, :collection => Aluno::ESTADO_CIVIL, :label => "Estado civil" %>
 </fieldset>
  <fieldset>
@@ -50,7 +50,7 @@ jQuery(function($){
     <%= f.input :data_de_emissao_do_certificado_de_reservista , :as => :string, :input_html => {:size => 8} %>
     <%= f.input :estado_do_certificado_de_reservista, :collection => option_estados_for_select  %>
   </fieldset>
-
+ </fieldset>
   <fieldset>
    <legend>Formações</legend>
         <%= link_to 'Nova Formação', :controller => "formacoes",
