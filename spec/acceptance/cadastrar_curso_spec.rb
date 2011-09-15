@@ -8,7 +8,7 @@ feature 'cadastrar dados do curso' do
   Factory(:professor, :nome => 'Annabell')
 	AreaDeConhecimento.create!(:name => 'redes')
 	AreaDeConhecimento.create!(:name => 'ia')
-  Laboratorio.create!(:sigla => 'LCMAT')
+  Laboratorio.create!(:sigla => 'LCMAT', :nome => 'Laboratório de Ciências Matemáticas')
 
     visit new_curso_path
     fill_in 'Nome', :with => 'Ciência da Computação'
