@@ -23,7 +23,7 @@ feature 'cadastrar disciplina' do
     page.should have_content 'Voltar'
   end
 
-    scenario 'cadastro normal' do
+    scenario 'cadastro incompleto' do
 
     visit new_disciplina_path
     fill_in 'Código', :with => 'INFO00'
