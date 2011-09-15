@@ -83,8 +83,8 @@ feature 'cadastrar a formação para  aluno' do
     fill_in 'Ano de Conclusão', :with => 'abcd'
     click_button 'Salvar'
 
-    page.should have_content 'Ano de Início - deve ser do tipo número inteiro'
-    page.should have_content 'Ano de Conclusão - deve ser do tipo número inteiro'
+    page.should have_content 'não é um número'
+    page.should have_content 'não é um número'
   end
 
    scenario 'Editar aluno e cadastrra formacao de nivel medio' do

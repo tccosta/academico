@@ -5,15 +5,18 @@ class Aluno < ActiveRecord::Base
   validates_presence_of :nome, :pai, :mae, :sexo, :estado_civil, :cpf, :rg, :orgao_emissor_do_rg, :estado_do_rg, 
                           :data_de_nascimento ,:nacionalidade ,:naturalidade ,:data_de_expedicao_do_rg, 
                           :numero_do_titulo_de_eleitor, :estado_do_titulo_de_eleitor
+  validates_presence_of :numero_do_certificado_de_reservista, :data_de_emissao_do_certificado_de_reservista, :categoria_do_certificado_de_reservista, 
+:orgao_do_certificado_de_reservista, :estado_do_certificado_de_reservista , 
+:if => :e_necessario_certificado_de_reservista?, :unless => :new_record?
 
-  camposCertificadodeReservista = {
-    :numero_do_certificado_de_reservista => "Numero do certificado de reservista",
-    :data_de_emissao_do_certificado_de_reservista => "Data do certificado de reservista",
-    :categoria_do_certificado_de_reservista => "Categoria do certificado de reservista",
-    :orgao_do_certificado_de_reservista => "Orgao do certificado de reservista",
-    :estado_do_certificado_de_reservista => "Estado do certificado de reservista"
- }
-  camposCertificadodeReservista.each {|campo| validates campo[0], :presence => { :message => campo[1] + ' - deve ser preenchido.'}, :if => :e_necessario_certificado_de_reservista?, :unless => :new_record?}
+#  camposCertificadodeReservista = {
+#    :numero_do_certificado_de_reservista => "Numero do certificado de reservista",
+#    :data_de_emissao_do_certificado_de_reservista => "Data do certificado de reservista",
+#    :categoria_do_certificado_de_reservista => "Categoria do certificado de reservista",
+#    :orgao_do_certificado_de_reservista => "Orgao do certificado de reservista",
+#    :estado_do_certificado_de_reservista => "Estado do certificado de reservista"
+# }
+#  camposCertificadodeReservista.each {|campo| validates campo[0], :presence_of => { :message => campo[1] + ' - deve ser preenchido.'}, :if => :e_necessario_certificado_de_reservista?, :unless => :new_record?}
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i , :message => ' invalido'}
 
   SEXO = ['Masculino','Feminino']
