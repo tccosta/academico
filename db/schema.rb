@@ -84,6 +84,16 @@ ActiveRecord::Schema.define(:version => 20110915174058) do
     t.datetime "updated_at"
   end
 
+  create_table "disciplinas", :force => true do |t|
+    t.string   "codigo"
+    t.string   "nome"
+    t.integer  "creditos"
+    t.integer  "carga_horaria"
+    t.integer  "numero_maximo_de_aluno"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "formacoes", :force => true do |t|
     t.string   "instituicao"
     t.string   "tipo"

@@ -1,0 +1,13 @@
+<%= semantic_form_for(@disciplina) do |f| %>
+
+<%= f.inputs do %>
+  <%= f.input :codigo, :label => 'Código' %>  
+  <%= f.input :nome, :label => 'Nome' %>
+  <%= f.input :creditos, :label => 'Créditos' %>
+  <%= f.input :carga_horaria, :label => 'Carga horária' %>
+  <%= f.input :numero_maximo_de_aluno, :label => 'Número máximo de alunos' %>
+<%end%>
+  <div class="actions">
+    <%= f.submit 'Salvar'%>
+  </div>
+<% end %>
