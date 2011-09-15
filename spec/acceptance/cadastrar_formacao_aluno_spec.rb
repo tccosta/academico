@@ -2,9 +2,11 @@
 
 require 'spec_helper'
 
-feature 'cadastrar a formação do aluno' do
-  scenario 'cadastro para formação de nível superior' do
-    visit new_formacao_path
+feature 'cadastrar a formação para  aluno' do
+  scenario 'incluir formacoes de aluno' do
+
+    visit aluno_path(Factory(:aluno))
+    click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'UENF'
     select('Bacharelado', :from => 'Tipo')
     fill_in 'Ano de Início', :with => '2007'
@@ -26,9 +28,9 @@ feature 'cadastrar a formação do aluno' do
     page.should have_content 'Voltar'
   end
 
-
-  scenario 'cadastro para fromação de nível técnico' do
-    visit new_formacao_path
+  scenario 'cadastro fromação de nível técnico para o aluno' do
+    visit aluno_path(Factory(:aluno))
+    click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'IFF'
     select('Técnico', :from => 'Tipo')
     fill_in 'Ano de Início', :with => '2002'
@@ -46,8 +48,9 @@ feature 'cadastrar a formação do aluno' do
     page.should have_content 'Voltar'
   end
 
-  scenario 'cadastro para formação de nível médio' do
-    visit new_formacao_path
+  scenario 'cadastro de  formação de nível médio para o aluno' do
+    visit aluno_path(Factory(:aluno))
+    click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'IFF'
     select( 'Médio', :from => 'Tipo')
     fill_in 'Ano de Início', :with => '2001'
@@ -64,7 +67,8 @@ feature 'cadastrar a formação do aluno' do
   end
 
   scenario 'cadastro para formação incompleto' do
-    visit new_formacao_path
+     visit aluno_path(Factory(:aluno))
+    click_link 'Nova Formação'
     click_button 'Salvar'
 
     page.should have_content 'Instituição - deve ser preenchida.'
@@ -73,7 +77,8 @@ feature 'cadastrar a formação do aluno' do
   end
 
   scenario 'Ano de Início e Conclusão não numéricos' do
-    visit new_formacao_path
+    visit aluno_path(Factory(:aluno))
+    click_link 'Nova Formação'
     fill_in 'Ano de Início', :with => '20,5'
     fill_in 'Ano de Conclusão', :with => 'abcd'
     click_button 'Salvar'
@@ -82,5 +87,22 @@ feature 'cadastrar a formação do aluno' do
     page.should have_content 'Ano de Conclusão - deve ser do tipo número inteiro'
   end
 
+   scenario 'Editar aluno e cadastrra formacao de nivel medio' do
+    visit edit_aluno_path(Factory(:aluno))
+    click_link 'Nova Formação'
+    fill_in 'Instituição', :with => 'IFF'
+    select( 'Médio', :from => 'Tipo')
+    fill_in 'Ano de Início', :with => '2001'
+    fill_in 'Ano de Conclusão', :with => '2003'
+    click_button 'Salvar'
+
+    page.should have_content 'Formação cadastrada com sucesso!'
+    page.should have_content 'Instituição: IFF'
+    page.should have_content 'Tipo: Ensino Médio'
+    page.should have_content 'Ano de Início: 2001'
+    page.should have_content 'Ano de Conclusão: 2003'
+    page.should have_content 'Editar'
+    page.should have_content 'Voltar'
+  end
 end
 

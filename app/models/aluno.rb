@@ -1,5 +1,5 @@
 class Aluno < ActiveRecord::Base
-
+  has_many:formacoes
   belongs_to:curso
 
   camposMasc = { :nome => "Nome", :pai => "Pai" ,:mae => "Mae",:sexo => "Sexo",:estado_civil => "Estado Civil", :cpf => "CPF", :rg => "RG", :orgao_emissor_do_rg => "Orgao Emissor do RG", :estado_do_rg => "Estado do RG" }
