@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 feature 'cadastrar dados do curso' do
-  scenario 'cadastro normal' do
+   scenario 'cadastro normal' do
 
   Factory(:professor, :nome => 'Annabell')
 	AreaDeConhecimento.create!(:name => 'redes')
