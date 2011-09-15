@@ -57,3 +57,16 @@ div.field, div.actions {
 
 form li { list-style: none }
 
+#menu {
+	border-bottom: 2px dotted;
+	
+}
+#footer {
+	border-top: 2px dotted;
+	margin-top: 38%;
+	text-align: center;
+	
+}
+.topo {
+	text-align: center;
+}
