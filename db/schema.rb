@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110915173821) do
+ActiveRecord::Schema.define(:version => 20110915183908) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(:version => 20110915173821) do
     t.string   "estado_do_certificado_de_reservista"
   end
 
+  create_table "alunos_turmas", :id => false, :force => true do |t|
+    t.integer "turma_id"
+    t.integer "aluno_id"
+  end
+
   create_table "area_de_conhecimento_cursos", :force => true do |t|
     t.integer  "curso_id"
     t.integer  "area_de_conhecimento_id"
@@ -64,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20110915173821) do
   create_table "cursos", :force => true do |t|
     t.string   "nome"
     t.string   "sigla"
-    t.string   "laboratorio"
     t.integer  "duracao"
     t.integer  "professor_id"
     t.integer  "laboratorio_id"
@@ -121,6 +125,15 @@ ActiveRecord::Schema.define(:version => 20110915173821) do
     t.string   "area_de_conhecimento"
     t.string   "sub_area_de_conhecimento"
     t.string   "lattes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "turmas", :force => true do |t|
+    t.string   "semestre_letivo"
+    t.integer  "professor_id"
+    t.time     "horario"
+    t.integer  "disciplina_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

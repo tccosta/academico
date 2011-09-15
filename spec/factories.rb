@@ -14,7 +14,7 @@ FactoryGirl.define do
     nome 'Laboratório de Ciências Matemáticas'
     sigla 'LCMAT'
   end
-    
+
   factory :curso do
     nome 'Ciência da Computação'
     sigla 'CCI'
@@ -22,7 +22,15 @@ FactoryGirl.define do
     association :professor
     association :laboratorio
   end
-  
+
+  factory :disciplina do
+    codigo 'COMP0112'
+    nome 'Desenvolvimento Ágil'
+    creditos '3'
+    carga_horaria '30'
+    numero_maximo_de_aluno '25'
+  end
+
   factory :aluno do
     nome 'Kirill Lassounski'
     email 'kirillsk8@gmail.com'

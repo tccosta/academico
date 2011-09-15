@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  semestre_letivo: MyString
+  disciplina: MyString
+  professor: MyString
+  horario: 2011-09-15 15:32:08
+
+two:
+  semestre_letivo: MyString
+  disciplina: MyString
+  professor: MyString
+  horario: 2011-09-15 15:32:08
