@@ -7,8 +7,18 @@
     <%= f.input :area_de_conhecimento, :label => 'Área de Conhecimento' %>
     <%= f.input :titulo_trabalho_de_conclusao, :label => 'Título do Trabalho de Conclusão', :hint => 'Apenas para graduação e pós graduação.'%>
     <%= f.input :orientador, :label => 'Orientador', :hint => 'Apenas para graduação e pós graduação.'%>
+
+    <% if @formacao.aluno  %>
+      <%= f.hidden_field 'aluno_id' %>
+    <% else %>
+        <p><%= f.label :aluno_id %><br />
+        <%= f.collection_select(:aluno_id,
+        Aluno.order('nome'),:id, :nome, {:prompt => true}) %></p>
+    <% end %>
+
   <% end %>
   <div class="actions">
+
     <%= f.submit 'Salvar' %>
   </div>
 <% end %>

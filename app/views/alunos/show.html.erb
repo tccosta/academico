@@ -133,7 +133,24 @@
         <%= @aluno.estado_do_certificado_de_reservista %>
       </p>
   </fieldset>
-</fieldset>
+  <fieldset>
+   <legend>Formações</legend>
+        <% @aluno.formacoes.each do |f| %>
+            <%=  "Tipo: #{f.tipo} " %>
+            <br>
+            <%= "Instituição: #{f.instituicao}" %>
+             <td><%= link_to 'Mostrar', f %></td>
+             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
+             <br> <br>
+
+               <% end %>
+      </p>
+ </fieldset>
+
+<%= link_to 'Nova Formação', :controller => "formacoes",
+                                 :action => "new",
+                                 :aluno => @aluno %>
+
 <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
 <%= link_to 'Voltar', alunos_path %>
 
