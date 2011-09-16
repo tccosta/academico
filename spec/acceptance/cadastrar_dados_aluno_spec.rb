@@ -74,7 +74,7 @@ feature 'cadastrar dados pessoais do aluno' do
     select('Rio de Janeiro', :from => 'Estado do rg')
     click_button 'Salvar'
 
-    page.should have_content 'Novo aluno'
+    page.should have_content 'Novo Aluno'
     page.should have_content 'O campo deve ser preenchido'
     page.should have_content 'O campo deve ser preenchido'
     page.should have_content 'O campo deve ser preenchido'
