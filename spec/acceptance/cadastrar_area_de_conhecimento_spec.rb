@@ -11,8 +11,8 @@ feature 'cadastrar área de conhecimento' do
 
     page.should have_content 'Área de conhecimento cadastrada com sucesso.'
     page.should have_content 'Nome: Redes'
-    page.should have_content 'Edit'
-    page.should have_content 'Back'
+    page.should have_content 'Editar'
+    page.should have_content 'Voltar'
 
   end
 
