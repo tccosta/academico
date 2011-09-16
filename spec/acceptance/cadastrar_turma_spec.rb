@@ -11,8 +11,8 @@ feature 'cadastrar turma' do
     fill_in 'Semestre Letivo', :with => '2011-1'
     select('Annabell', :from => 'Professor')
     select('Desenvolvimento Ágil', :from => 'Disciplina')
-    select('17', :from => 'Hour')
-    select('15', :from => 'Minute')
+    select('17', :from => 'Hora')
+    select('15', :from => 'Minuto')
 
     click_button 'Salvar'
 
@@ -27,8 +27,8 @@ feature 'cadastrar turma' do
 
     click_button 'Salvar'
 
-    page.should have_content '- deve ser preenchida'
-    page.should have_content '- deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
   end
 
 end

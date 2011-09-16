@@ -75,12 +75,12 @@ feature 'cadastrar dados pessoais do aluno' do
     click_button 'Salvar'
 
     page.should have_content 'Novo aluno'
-    page.should have_content 'Nome - deve ser preenchido.'
-    page.should have_content 'Data de Nascimento - deve ser preenchida.'
-    page.should have_content 'Estado Civil - deve ser preenchido.'
-    page.should have_content 'CPF - deve ser preenchido.'
-    page.should have_content 'RG - deve ser preenchido.'
-    page.should have_content 'Data de Expedicao do RG - deve ser preenchida.'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
     page.should have_content 'Filiação'
     page.should have_content 'Voltar'
   end

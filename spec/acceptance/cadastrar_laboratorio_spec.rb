@@ -26,8 +26,8 @@ feature 'Cadastrar laboratório para centro' do
 
     click_button 'Salvar'
 
-    page.should have_content '- deve ser preenchido'
-    page.should have_content '- deve ser preenchida'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
 
   end
 

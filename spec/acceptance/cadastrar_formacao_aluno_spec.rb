@@ -71,9 +71,9 @@ feature 'cadastrar a formação para  aluno' do
     click_link 'Nova Formação'
     click_button 'Salvar'
 
-    page.should have_content 'Instituição - deve ser preenchida.'
-    page.should have_content 'Tipo - deve ser preenchido.'
-    page.should have_content 'Ano de Início - deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
   end
 
   scenario 'Ano de Início e Conclusão não numéricos' do
@@ -83,11 +83,11 @@ feature 'cadastrar a formação para  aluno' do
     fill_in 'Ano de Conclusão', :with => 'abcd'
     click_button 'Salvar'
 
-    page.should have_content 'Ano de Início - deve ser do tipo número inteiro'
-    page.should have_content 'Ano de Conclusão - deve ser do tipo número inteiro'
+    page.should have_content 'O campo deve ser preenchido com um número'
+    page.should have_content 'O campo deve ser preenchido com um número'
   end
 
-   scenario 'Editar aluno e cadastrra formacao de nivel medio' do
+   scenario 'Editar aluno e cadastra formacao de nivel medio' do
     visit edit_aluno_path(Factory(:aluno))
     click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'IFF'
