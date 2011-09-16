@@ -83,11 +83,11 @@ feature 'cadastrar a formação para  aluno' do
     fill_in 'Ano de Conclusão', :with => 'abcd'
     click_button 'Salvar'
 
-    page.should have_content 'não é um número'
-    page.should have_content 'não é um número'
+    page.should have_content 'O campo deve ser preenchido com um número'
+    page.should have_content 'O campo deve ser preenchido com um número'
   end
 
-   scenario 'Editar aluno e cadastrra formacao de nivel medio' do
+   scenario 'Editar aluno e cadastra formacao de nivel medio' do
     visit edit_aluno_path(Factory(:aluno))
     click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'IFF'
