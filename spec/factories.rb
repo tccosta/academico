@@ -10,6 +10,11 @@ FactoryGirl.define do
    lattes "http://"
   end
 
+  factory :centro do
+    nome 'Centro de Ciência e Tecnologia'
+    sigla 'CCT'
+  end
+
   factory :laboratorio do
     nome 'Laboratório de Ciências Matemáticas'
     sigla 'LCMAT'

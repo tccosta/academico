@@ -10,6 +10,24 @@
   <%= @centro.sigla %>
 </p>
 
+<fieldset>
+   <legend>Laboratórios</legend>
+        <% @centro.laboratorios.each do |f| %>
+            <%=  "Nome: #{f.nome} " %>
+            <br>
+            <%= "Sigla: #{f.sigla}" %>
+             <td><%= link_to 'Mostrar', f %></td>
+             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
+             <br> <br>
+
+               <% end %>
+      </p>
+ </fieldset>
+
+<%= link_to 'Novo Laboratório', :controller => "laboratorios",
+                                 :action => "new",
+                                 :centro => @centro %>
+
 
 <%= link_to 'Editar', edit_centro_path(@centro) %> |
 <%= link_to 'Voltar', centros_path %>

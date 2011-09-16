@@ -3,11 +3,18 @@
 		<%= f.input :nome, :label => 'Nome' %>
 		<%= f.input :sigla, :label => 'Sigla' %>
 	<%end%>
+
+
+  <% if @laboratorio.centro  %>
+    <%= f.hidden_field 'centro_id' %>
+  <% else %>
+      <p><%= f.label :centro_id %><br />
+      <%= f.collection_select(:centro_id,
+      Centro.order('nome'),:id, :nome, {:prompt => true}) %></p>
+  <% end %>
+
   <div class="actions">
     <%= f.submit 'Salvar'%>
   </div>
 <% end %>
-
-
-
 

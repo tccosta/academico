@@ -2,8 +2,9 @@
 
 <table>
   <tr>
-    <th>Nome</th>
+    <th>Centro</th>
     <th>Sigla</th>
+    <th>Nome</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +12,9 @@
 
 <% @laboratorios.each do |laboratorio| %>
   <tr>
-    <td><%= laboratorio.nome %></td>
+    <td><%= laboratorio.centro.sigla %></td>
     <td><%= laboratorio.sigla %></td>
+    <td><%= laboratorio.nome %></td>
     <td><%= link_to 'Exibir', laboratorio %></td>
     <td><%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></td>
     <td><%= link_to 'Excluir', laboratorio, :confirm => 'Tem certeza?', :method => :delete %></td>
@@ -21,6 +23,4 @@
 </table>
 
 <br />
-
-<%= link_to 'Novo Laboratório', new_laboratorio_path %>
 

@@ -2,9 +2,11 @@
 
 require 'spec_helper'
 
-feature 'cadastrar laboratório' do
-  scenario 'cadastro normal' do
-    visit new_laboratorio_path
+feature 'Cadastrar laboratório para centro' do
+  scenario 'Cadastro normal' do
+
+    visit centro_path(Factory(:centro))
+    click_link 'Novo Laboratório'
 
     fill_in 'Nome', :with => 'Laboratório de Ciências Matemáticas'
     fill_in 'Sigla', :with => 'LCMAT'
@@ -19,7 +21,8 @@ feature 'cadastrar laboratório' do
   end
 
   scenario 'cadastro incorreto' do
-    visit new_laboratorio_path
+    visit centro_path(Factory(:centro))
+    click_link 'Novo Laboratório'
 
     click_button 'Salvar'
 
