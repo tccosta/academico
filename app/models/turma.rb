@@ -3,7 +3,6 @@ class Turma < ActiveRecord::Base
   belongs_to :disciplina
   belongs_to :professor
 
-  validates :professor, :semestre_letivo, :presence => {:message => ' - deve ser preenchido'}
-  validates :disciplina, :presence => {:message => ' - deve ser preenchida'}
+  validates_presence_of :professor, :semestre_letivo, :disciplina
 end
 
