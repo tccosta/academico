@@ -20,10 +20,7 @@ feature 'visitar links na página principal' do
     clicar_link_e_verificar_texto 'Dados acadêmicos'
   end
 
-  scenario 'visita link de formações' do
-    clicar_link_e_verificar_texto 'Formações'
-  end
-
+ 
   def clicar_link_e_verificar_texto(texto)
     visit root_path
     click_link texto
