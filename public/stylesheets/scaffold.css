@@ -71,3 +71,8 @@ form li { list-style: none }
 	text-align: center;
 }
 
+.inline-errors{
+    color: red;
+    background-color: silver;
+}
+
