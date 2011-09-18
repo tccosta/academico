@@ -7,17 +7,24 @@
 
 <title>Plano de Estudos</title>
 <div id="header_plano">
+	UENF - PLANO DE ESTUDOS
+	<p>Data emissão: <%= Time.now.sftime("%H : %m : %s") %></p>		
 	
 </div>
 <div id="meio_plano">
-			<h2><%= @aluno.turmas %></h2>
-			
+<p>Centro: <%= @aluno.curso.laboratorio.centro %></p>
+<p>Laboratorio: <%= @aluno.curso.laboratorio %></p>		
+<p>Curso: <%= @aluno.curso %></p>				
+<p>Nome: <%= @aluno.nome %></p>		
+	
+	<h2>Turmas matriculas</h2>		
+			<h2><% @aluno.turmas.each { |turma| %></h2>
+				<p>Materia: <%= turma.disciplina.nome %></p>		
+				<p>Creditos: <%= turma.disciplina.creditos %></p>		
+			<% } %>
 </div>
 <div id="footer_plano">
-	
+	UENF	
 </div>
 
 
-<h1>plano do <%= @aluno.nome %></h1>
-<h2><%= @aluno.turmas %></h2>
-<h2><%= @aluno.curso %></h2>
