@@ -45,7 +45,7 @@ feature 'cadastrar dados academicos do aluno' do
     fill_in 'Link do Curriculum Lattes', :with => 'http://lattes.cnpq.br/1619508753128532'
     click_button 'Salvar'
 
-    page.should have_content 'Data da prova do ingresso - deve ser preenchida ou e invalida'
+    page.should have_content 'O campo deve ser preenchido'
     page.should have_content 'Voltar'
   end
 

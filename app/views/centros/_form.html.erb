@@ -3,6 +3,14 @@
 		<%= f.input :nome, :label => 'Nome' %>
 		<%= f.input :sigla, :label => 'Sigla' %>
 	<%end%>
+
+<fieldset>
+   <legend>Laboratório</legend>
+        <%= link_to 'Novo Laboratório', :controller => "laboratorios",
+                                 :action => "new",
+                                 :centro => @centro %>
+</fieldset>
+
   <div class="actions">
     <%= f.submit 'Salvar'%>
   </div>

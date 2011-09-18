@@ -23,7 +23,7 @@ feature 'cadastrar disciplina' do
     page.should have_content 'Voltar'
   end
 
-    scenario 'cadastro normal' do
+    scenario 'cadastro incompleto' do
 
     visit new_disciplina_path
     fill_in 'Código', :with => 'INFO00'
@@ -31,8 +31,8 @@ feature 'cadastrar disciplina' do
     fill_in 'Número máximo de alunos', :with => '30'
     click_button 'Salvar'
 
-    page.should have_content 'Nome - deve ser preenchido'
-    page.should have_content 'Carga horária - deve ser preenchida'
+    page.should have_content 'O campo deve ser preenchido'
+    page.should have_content 'O campo deve ser preenchido'
     page.should have_content 'Voltar'
   end
 end

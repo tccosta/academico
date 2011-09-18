@@ -10,6 +10,11 @@ FactoryGirl.define do
    lattes "http://"
   end
 
+  factory :centro do
+    nome 'Centro de Ciência e Tecnologia'
+    sigla 'CCT'
+  end
+
   factory :laboratorio do
     nome 'Laboratório de Ciências Matemáticas'
     sigla 'LCMAT'
@@ -54,6 +59,8 @@ FactoryGirl.define do
     estado_do_rg 'Rio de Janeiro'
     data_de_emissao_do_certificado_de_reservista '30/06/2011'
     #association :turma
+    numero_do_titulo_de_eleitor '12345'
+    estado_do_titulo_de_eleitor 'RJ'
   end
 end
 
