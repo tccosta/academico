@@ -27,6 +27,7 @@
     <td><%= aluno.nacionalidade %></td>
     <td><%= aluno.naturalidade %></td>
     <td><%= aluno.estado_civil %></td>
+    <td><%= link_to 'Plano de estudos', plano_estudos_path(aluno) %></td>
     <td><%= link_to 'Mostrar', aluno %></td>
     <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
     <td><%= link_to 'Deletar', aluno, :confirm => 'Você tem certeza?', :method => :delete %></td>

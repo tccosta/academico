@@ -2,7 +2,7 @@ class Aluno < ActiveRecord::Base
 
   has_and_belongs_to_many :turmas
   belongs_to :curso
-  has_many:formacoes
+  has_many :formacoes
 
   camposMasc = { :nome => "Nome", :pai => "Pai" ,:mae => "Mae",:sexo => "Sexo",:estado_civil => "Estado Civil", :cpf => "CPF", :rg => "RG", :orgao_emissor_do_rg => "Orgao Emissor do RG", :estado_do_rg => "Estado do RG" }
   camposMasc.each { |campo| validates campo[0], :presence => { :message => campo[1] + ' - deve ser preenchido.'}}

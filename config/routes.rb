@@ -10,8 +10,11 @@ Academico::Application.routes.draw do
   resources :cursos
   resources :dados_academicos
   resources :formacoes
-  resources :alunos
+  resources :alunos 
+  get '/alunos/:id/plano_estudos' => 'alunos#plano_estudos', :as => :plano_estudos
+
   resources :professores
+  
 
 
 
