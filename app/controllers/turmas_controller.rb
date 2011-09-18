@@ -4,7 +4,12 @@ class TurmasController < InheritedResources::Base
   before_filter :carregarDisciplinas, :only => [:new, :edit, :create, :update]
 
   def create
-    create!(:notice => 'Turma cadastrada com sucesso!')
+    @turma = Turma.new params[:turma]
+    if @turma.save
+      redirect_to :turmas
+    else
+      render :action => 'new'
+    end
   end
 
  	def carregarProfessores

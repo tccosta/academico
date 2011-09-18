@@ -1,0 +1,28 @@
+<h1>Horários</h1>
+
+<table>
+  <tr>
+    <th>Dia da semana</th>
+    <th>Hora de início</th>
+    <th>Hora de fim</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @horarios.each do |horario| %>
+  <tr>
+    <td><%= horario.dia_da_semana %></td>
+    <td><%= horario.hora_de_inicio.strftime '%H:%M' %></td>
+    <td><%= horario.hora_de_fim.strftime '%H:%M' %></td>
+    <td><%= link_to 'Mostrar', horario %></td>
+    <td><%= link_to 'Editar', edit_horario_path(horario) %></td>
+    <td><%= link_to 'Excluir', horario, :confirm => 'Tem certeza que deseja exlcuir?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo horario', new_horario_path %>
+

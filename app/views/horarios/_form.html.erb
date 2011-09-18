@@ -1,0 +1,22 @@
+
+<%= semantic_form_for(@horario) do |f| %>
+<fieldset>
+    <legend>Dados</legend>
+    <%= f.input :dia_da_semana, :collection => Horario::DIAS_DA_SEMANA %>
+		<%= f.input :hora_de_inicio, :as => :time,  :label => 'Hora de início' %>
+		<%= f.input :hora_de_fim, :as => :time,  :label => 'Hora de fim' %>
+</fieldset>
+
+  <% if @horario.turma  %>
+      <%= f.hidden_field 'turma_id' %>
+    <% else %>
+        <p><%= f.label :turma_id %><br />
+        <%= f.collection_select(:turma_id,
+        Turma.order('dia_da_semana'),:id, :dia_da_semana, {:prompt => true}) %></p>
+    <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>
+

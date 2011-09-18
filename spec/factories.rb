@@ -10,6 +10,12 @@ FactoryGirl.define do
    lattes "http://"
   end
 
+  factory :horario do
+   dia_da_semana 'Terça-feira'
+   hora_de_inicio '10:00'
+   hora_de_fim '12:00'
+  end
+
   factory :centro do
     nome 'Centro de Ciência e Tecnologia'
     sigla 'CCT'

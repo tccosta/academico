@@ -53,11 +53,8 @@ jQuery(function($){
  </fieldset>
   <fieldset>
    <legend>Formações</legend>
-        <%= link_to 'Nova Formação', :controller => "formacoes",
-                                 :action => "new",
-                                 :aluno => @aluno %>
+        <%= link_to 'Nova Formação', :controller => "formacoes", :action => "new", :aluno => @aluno %>
  </fieldset>
-
 
   <div class="actions">
     <%= f.submit 'Salvar' %>

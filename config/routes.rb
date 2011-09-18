@@ -1,4 +1,6 @@
 Academico::Application.routes.draw do
+  resources :horarios
+
   resources :turmas
 
   resources :disciplinas

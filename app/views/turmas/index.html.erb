@@ -1,29 +1,37 @@
-<h1>Listando turmas</h1>
+<h1>Turmas</h1>
 
+<% @turmas.each do |turma| %>
 <table>
   <tr>
     <th>Semestre letivo</th>
     <th>Disciplina</th>
     <th>Professor</th>
-    <th>Horário</th>
+    <% if turma.horarios.empty? == false%>
+    <th>Horários</th>
+    <th></th>
+    <% end %>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
-<% @turmas.each do |turma| %>
   <tr>
     <td><%= turma.semestre_letivo %></td>
     <td><%= turma.disciplina.nome %></td>
     <td><%= turma.professor.nome %></td>
-    <td><%= turma.horario.strftime("%H:%M") %></td>
+      <% if turma.horarios.empty? == false%>
+        <% turma.horarios.each do |horario| %>
+          <td>
+            <%= horario.dia_da_semana+", De "+horario.hora_de_inicio.strftime('%H:%M')+" à "+horario.hora_de_fim.strftime('%H:%M') %>
+          </td>
+        <% end %>
+      <% end %>
     <td><%= link_to 'Mostrar', turma %></td>
     <td><%= link_to 'Editar', edit_turma_path(turma) %></td>
     <td><%= link_to 'Excluir', turma, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
+    <td><%= link_to 'Adicionar horário', :controller => "horarios", :action => "new", :turma => turma %></td>
   </tr>
 <% end %>
 </table>
-
 <br />
 
 <%= link_to 'Nova Turma', new_turma_path %>
