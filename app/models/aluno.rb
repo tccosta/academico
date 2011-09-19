@@ -1,6 +1,9 @@
 class Aluno < ActiveRecord::Base
-  has_many:formacoes
-  belongs_to:curso
+
+  has_and_belongs_to_many :turmas
+  belongs_to :curso
+  has_many :formacoes
+
 
   validates_presence_of :nome, :pai, :mae, :sexo, :estado_civil, :cpf, :rg, :orgao_emissor_do_rg, :estado_do_rg, 
                         :data_de_nascimento ,:nacionalidade ,:naturalidade ,:data_de_expedicao_do_rg, 

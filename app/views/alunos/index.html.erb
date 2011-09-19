@@ -27,14 +27,15 @@
     <td><%= aluno.nacionalidade %></td>
     <td><%= aluno.naturalidade %></td>
     <td><%= aluno.estado_civil %></td>
-    <td><%= link_to 'Mostrar', aluno %></td>
+    <td><%= link_to 'Plano de estudos', plano_estudos_path(aluno) %></td>
+    <td><%= link_to 'Exibir', aluno %></td>
     <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
-    <td><%= link_to 'Deletar', aluno, :confirm => 'Você tem certeza?', :method => :delete %></td>
+    <td><%= link_to 'Excluir', aluno, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Novo aluno', new_aluno_path %>
+<%= link_to 'Novo Aluno', new_aluno_path %>
 

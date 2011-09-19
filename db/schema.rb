@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(:version => 20110918131417) do
 
+
   create_table "alunos", :force => true do |t|
     t.string   "nome"
     t.string   "email"

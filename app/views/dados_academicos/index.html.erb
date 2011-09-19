@@ -1,4 +1,4 @@
-<h1>Dados acadêmicos</h1>
+<h1>Dados Acadêmicos</h1>
 
 <table>
   <tr>
@@ -25,14 +25,14 @@
     <td><%= dados_academico.cotista %></td>
     <td><%= dados_academico.tipo_de_cota %></td>
     <td><%= dados_academico.link_do_lattes %></td>
-    <td><%= link_to 'Mostrar', dados_academico %></td>
+    <td><%= link_to 'Exibir', dados_academico %></td>
     <td><%= link_to 'Editar', edit_dados_academico_path(dados_academico) %></td>
-    <td><%= link_to 'Deletar', dados_academico, :confirm => 'Você tem certeza?', :method => :delete %></td>
+    <td><%= link_to 'Excluir', dados_academico, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Novos Dados academico', new_dados_academico_path %>
+<%= link_to 'Novos Dados Academico', new_dados_academico_path %>
 
