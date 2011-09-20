@@ -1,5 +1,5 @@
 <fieldset>
-	
+
 	<p id="notice"><%= notice %></p>
 
 	<p>
@@ -17,8 +17,16 @@
 		<%= @laboratorio.centro.nome %>
 	</p>
 
+  <fieldset>
+
+  <legend>Disciplina</legend>
+ 	    <%= link_to 'Nova Disciplina', :controller => "disciplinas",
+                                      :action => "new",
+                                      :laboratorio => @laboratorio%>
+ </fieldset>
 
 	<%= link_to 'Editar', edit_laboratorio_path(@laboratorio) %> |
-	<%= link_to 'Voltar', laboratorios_path %>
+	<%= link_to 'Voltar', laboratorio_path %>
 
 </fieldset>
+

@@ -24,6 +24,7 @@ FactoryGirl.define do
   factory :laboratorio do
     nome 'Laboratório de Ciências Matemáticas'
     sigla 'LCMAT'
+    association :centro
   end
 
   factory :curso do
@@ -41,7 +42,7 @@ FactoryGirl.define do
     carga_horaria '30'
     numero_maximo_de_aluno '25'
   end
-  
+
   factory :turma do
     semestre_letivo '2011-2'
     codigo 'A'

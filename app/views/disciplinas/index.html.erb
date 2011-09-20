@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Laboratorio</th>
     <th>Codigo</th>
     <th>Nome</th>
     <th>Creditos</th>
@@ -14,6 +15,7 @@
 <% @disciplinas.each do |disciplina| %>
   <tr class="campo" onclick="window.location = '<%= disciplina_path(disciplina) %>'">
     <td><%= disciplina.codigo %></td>
+    <td><%= disciplina.laboratorio.sigla %></td>
     <td><%= disciplina.nome %></td>
     <td><%= disciplina.creditos %></td>
     <td><%= disciplina.carga_horaria %></td>
@@ -25,6 +27,4 @@
 </table>
 
 <br />
-
-<%= link_to 'Nova Disciplina', new_disciplina_path %>
 
