@@ -4,6 +4,6 @@ class Turma < ActiveRecord::Base
   belongs_to :disciplina
   belongs_to :professor
 
-  validates_presence_of :professor, :semestre_letivo, :disciplina
+  validates_presence_of :professor, :codigo, :semestre_letivo, :disciplina
 end
 

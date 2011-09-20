@@ -1,3 +1,5 @@
+#coding: utf-8
+
 class AlunosController < InheritedResources::Base
   def create
     create!(:notice => 'Aluno cadastrado com sucesso.')
@@ -11,5 +13,11 @@ class AlunosController < InheritedResources::Base
       render :layout => false
     end
   end
+  
+  def matricular_em_turma
+    @aluno = Aluno.find(params[:id])
+  end
+
+    
 end
 

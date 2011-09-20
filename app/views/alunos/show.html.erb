@@ -1,5 +1,3 @@
-<h2><%= @aluno.nome %></h2>
-
 <p id="notice"><%= notice %></p>
 
 <fieldset>
@@ -148,6 +146,16 @@
                <% end %>
       </p>
  </fieldset>
+
+<fieldset>
+	<legend>Turmas em que está matriculado</legend>
+
+		<% @aluno.turmas.each do |turma| %>
+			<p><%= "#{turma.disciplina.nome} - #{turma.disciplina.codigo} #{turma.codigo}" %></p>
+		<% end %>
+
+	<p><%= link_to 'Matricular aluno em turmas', matricular_em_turma_aluno_path(@aluno) %></p>		
+</fieldset>
 
 <%= link_to 'Nova Formação', :controller => "formacoes",
                                  :action => "new",

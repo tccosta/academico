@@ -1,4 +1,4 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #fff; color: #333; width: 1200px;}
 
 body, p, ol, ul, td {
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
@@ -68,12 +68,13 @@ form li { list-style: none }
     border: 1px solid black;
     text-decoration: none;
     padding: 5px;
-    -moz-border-radius: 30px; 
-    border-radius: 30px;
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
     background: rgb(250,250,250);    
 }
 
 #menu a:hover { background: darkblue;}
+
 
 #footer {
 	border-top: 2px dotted black;
@@ -95,13 +96,12 @@ table,td,th{
     border: 1px solid black;
     border-collapse: collapse;
 }
-table{
+table {
     width: 100%;
-    -moz-border-radius: 5px; border-radius: 5px;
 }
 
 table tr.campo td {
-    padding: 8px;
+    padding: 8px;    
 }
 
 table tr.campo:hover {

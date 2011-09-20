@@ -4,9 +4,8 @@ class Aluno < ActiveRecord::Base
   belongs_to :curso
   has_many :formacoes
 
-
   validates_presence_of :nome, :pai, :mae, :sexo, :estado_civil, :cpf, :rg, :orgao_emissor_do_rg, :estado_do_rg, 
-                        :data_de_nascimento ,:nacionalidade ,:naturalidade ,:data_de_expedicao_do_rg, 
+                        :data_de_nascimento ,:nacionalidade, :naturalidade ,:data_de_expedicao_do_rg, 
                         :numero_do_titulo_de_eleitor, :estado_do_titulo_de_eleitor
    validates_presence_of :numero_do_certificado_de_reservista, :data_de_emissao_do_certificado_de_reservista, 
                          :categoria_do_certificado_de_reservista, :orgao_do_certificado_de_reservista, 

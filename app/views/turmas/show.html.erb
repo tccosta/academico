@@ -20,8 +20,8 @@
 
 	  <fieldset>
 	   <legend>Horários</legend>
-	        <% @turma.horarios.each do |f| %>
-	            <%= "#{f.dia_da_semana}, De #{f.hora_de_inicio.strftime('%H:%M')} à #{f.hora_de_fim.strftime('%H:%M')} " %>
+	        <% @turma.horarios.each do |h| %>
+	            <%= "#{h.dia_da_semana}, de #{h.hora_de_inicio.strftime('%H:%M')} à #{h.hora_de_fim.strftime('%H:%M')} " %>
 
 	             <td><%= link_to 'Mostrar', f %></td> |
 	             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
@@ -34,6 +34,14 @@
 		                                 :turma => @turma %>
 	 </fieldset>
 
+	 <fieldset>
+		<legend>Alunos Matriculados</legend>
+		
+		<% @turma.alunos.each do |aluno| %>
+			<%= aluno.nome %>
+			<p><%= %></p>
+		<% end %>
+   </fieldset>
 
 
 

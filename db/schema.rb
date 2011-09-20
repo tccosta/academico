@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110918131417) do
+ActiveRecord::Schema.define(:version => 20110920033331) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20110918131417) do
     t.integer  "disciplina_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "codigo",          :limit => 1
   end
 
 end

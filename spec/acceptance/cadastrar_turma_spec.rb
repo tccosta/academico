@@ -9,6 +9,7 @@ feature 'cadastrar turma' do
     visit new_turma_path
 
     fill_in 'Semestre Letivo', :with => '2011-1'
+    fill_in 'Codigo', :with => 'A'
     select('Annabell', :from => 'Professor')
     select('Desenvolvimento Ágil', :from => 'Disciplina')
 
@@ -18,6 +19,7 @@ feature 'cadastrar turma' do
     page.should have_content '2011-1'
     page.should have_content 'Desenvolvimento Ágil'
     page.should have_content 'Annabell'
+    page.should have_content 'A'
   end
 
   scenario 'cadastro incorreto' do
@@ -33,6 +35,8 @@ feature 'cadastrar turma' do
     visit new_turma_path
 
     fill_in 'Semestre Letivo', :with => '2011-1'
+    fill_in 'Codigo', :with => 'A'
+    
     select('Annabell', :from => 'Professor')
     select('Desenvolvimento Ágil', :from => 'Disciplina')
     click_button 'Salvar'

@@ -2,6 +2,7 @@
 
 <table>
 	<tr>
+	  <th>Codigo</th>
 	  <th>Semestre letivo</th>
 	  <th>Disciplina</th>
 	  <th>Professor</th>
@@ -12,18 +13,19 @@
 
 <% @turmas.each do |turma| %>
   <tr class="campo" onclick="window.location = '<%= turma_path(turma) %>'">
+	 <td><%= turma.codigo %></td>
     <td><%= turma.semestre_letivo %></td>
     <td><%= turma.disciplina.nome %></td>
     <td><%= turma.professor.nome %></td>
 
+    <td>
     <% if turma.horarios.any? %>
       <% turma.horarios.each do |horario| %>
-        <td>
-          <%= "#{horario.dia_da_semana}, de #{horario.hora_de_inicio.strftime('%H:%M')} à #{horario.hora_de_fim.strftime('%H:%M')}" %>
-        </td>
+          <%= "#{horario.dia_da_semana}, de #{horario.hora_de_inicio.strftime('%H:%M')} à #{horario.hora_de_fim.strftime('%H:%M')}" %><br />
       <% end %>
     <% end %>
-
+   </td>
+	
     <td><%= link_to 'Editar', edit_turma_path(turma) %></td>
     <td><%= link_to 'Excluir', turma, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>
     <td><%= link_to 'Adicionar horário', :controller => "horarios", :action => "new", :turma => turma %></td>
