@@ -1,3 +1,5 @@
+<fieldset>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,23 +14,18 @@
 
 <fieldset>
    <legend>Laboratórios</legend>
-        <% @centro.laboratorios.each do |f| %>
-            <%=  "Nome: #{f.nome} " %>
-            <br>
-            <%= "Sigla: #{f.sigla}" %>
-             <td><%= link_to 'Mostrar', f %></td>
-             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
-             <br> <br>
-
-               <% end %>
-      </p>
- </fieldset>
-
-<%= link_to 'Novo Laboratório', :controller => "laboratorios",
-                                 :action => "new",
-                                 :centro => @centro %>
+        <% @centro.laboratorios.each do |laboratorio| %>
+            <%= link_to "#{laboratorio.nome} - #{laboratorio.sigla}", laboratorio %>
+        <% end %>
+		 <br /><br />
+		
+		<%= link_to 'Novo Laboratório', :controller => "laboratorios",
+		                                 :action => "new",
+		                                 :centro => @centro %>
+</fieldset>
 
 
 <%= link_to 'Editar', edit_centro_path(@centro) %> |
 <%= link_to 'Voltar', centros_path %>
 
+</fieldset>

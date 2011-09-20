@@ -12,11 +12,10 @@
     <th>Link do lattes</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @dados_academicos.each do |dados_academico| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= dados_academico_path(dados_academico) %>'">
     <td><%= dados_academico.matricula %></td>
     <td><%= dados_academico.curso %></td>
     <td><%= dados_academico.semestre %></td>
@@ -25,7 +24,6 @@
     <td><%= dados_academico.cotista %></td>
     <td><%= dados_academico.tipo_de_cota %></td>
     <td><%= dados_academico.link_do_lattes %></td>
-    <td><%= link_to 'Exibir', dados_academico %></td>
     <td><%= link_to 'Editar', edit_dados_academico_path(dados_academico) %></td>
     <td><%= link_to 'Excluir', dados_academico, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>

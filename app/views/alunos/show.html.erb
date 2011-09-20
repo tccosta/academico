@@ -135,6 +135,7 @@
   </fieldset>
   <fieldset>
    <legend>Formações</legend>
+	  <p>
         <% @aluno.formacoes.each do |f| %>
             <%=  "Tipo: #{f.tipo} " %>
             <br>
@@ -145,11 +146,22 @@
 
                <% end %>
       </p>
+
+		<%= link_to 'Nova Formação', :controller => "formacoes",
+		                                 :action => "new",
+		                                 :aluno => @aluno %>
  </fieldset>
 
-<%= link_to 'Nova Formação', :controller => "formacoes",
-                                 :action => "new",
-                                 :aluno => @aluno %>
+<fieldset>
+	<legend>Turmas em que está matriculado</legend>
+
+		<% @aluno.turmas.each do |turma| %>
+			<p><%= link_to "#{turma.disciplina.nome} - #{turma.disciplina.codigo} #{turma.codigo}", turma %></p>
+		<% end %>
+	
+		<br />
+	<%= link_to 'Matricular aluno em turmas', matricular_em_turma_aluno_path(@aluno) %>
+</fieldset>
 
 <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
 <%= link_to 'Voltar', alunos_path %>

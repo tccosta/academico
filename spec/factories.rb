@@ -10,6 +10,12 @@ FactoryGirl.define do
    lattes "http://"
   end
 
+  factory :horario do
+   dia_da_semana 'Terça-feira'
+   hora_de_inicio '10:00'
+   hora_de_fim '12:00'
+  end
+
   factory :centro do
     nome 'Centro de Ciência e Tecnologia'
     sigla 'CCT'
@@ -38,6 +44,7 @@ FactoryGirl.define do
   
   factory :turma do
     semestre_letivo '2011-2'
+    codigo 'A'
     association :disciplina
     association :professor
   end
@@ -53,12 +60,18 @@ FactoryGirl.define do
     naturalidade 'Russia'
     estado_civil 'Solteiro(a)'
     cpf '05998813723'
+    #RG
     rg '12345678'
     orgao_emissor_do_rg 'DETRAN'
     data_de_expedicao_do_rg '23/02/2010'
     estado_do_rg 'Rio de Janeiro'
+    #Certificado de reservista
+    numero_do_certificado_de_reservista '25'
+    categoria_do_certificado_de_reservista 'A'
+    estado_do_certificado_de_reservista 'Rio de Janeiro'
     data_de_emissao_do_certificado_de_reservista '30/06/2011'
-    #association :turma
+    orgao_do_certificado_de_reservista 'Exército'
+    #Titulo de eleitor
     numero_do_titulo_de_eleitor '12345'
     estado_do_titulo_de_eleitor 'RJ'
     numero_do_certificado_de_reservista '12233232'

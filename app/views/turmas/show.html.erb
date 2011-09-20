@@ -1,26 +1,50 @@
-<p id="notice"><%= notice %></p>
+<fieldset>
 
-<p>
-  <b>Semestre letivo:</b>
-  <%= @turma.semestre_letivo %>
-</p>
+	<legend>Turma</legend>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Disciplina:</b>
-  <%= @turma.disciplina.nome %>
-</p>
+	<p>
+	  <b>Semestre letivo:</b>
+	  <%= @turma.semestre_letivo %>
+	</p>
 
-<p>
-  <b>Professor:</b>
-  <%= @turma.professor.nome %>
-</p>
+	<p>
+	  <b>Disciplina:</b>
+	  <%= @turma.disciplina.nome %>
+	</p>
 
-<p>
-  <b>Horário:</b>
-  <%= @turma.horario.strftime("%H:%M") %>
-</p>
+	<p>
+	  <b>Professor:</b>
+	  <%= @turma.professor.nome %>
+	</p>
+
+	  <fieldset>
+	   <legend>Horários</legend>
+	        <% @turma.horarios.each do |h| %>
+	            <%= "#{h.dia_da_semana}, de #{h.hora_de_inicio.strftime('%H:%M')} à #{h.hora_de_fim.strftime('%H:%M')} " %>
+
+	             <%= link_to 'Apagar', h, :confirm => 'Tem certeza?', :method => :delete %>
+	             <br> <br>
+
+	               <% end %>
+	      </p>
+		<%= link_to 'Novo horário', :controller => "horarios",
+		                                 :action => "new",
+		                                 :turma => @turma %>
+	 </fieldset>
+
+	 <fieldset>
+		<legend>Alunos Matriculados</legend>
+		
+		<% @turma.alunos.each do |aluno| %>
+			<%= link_to aluno.nome, aluno %>
+			<p><%= %></p>
+		<% end %>
+   </fieldset>
 
 
-<%= link_to 'Editar', edit_turma_path(@turma) %> |
-<%= link_to 'Voltar', turmas_path %>
 
+	<%= link_to 'Editar', edit_turma_path(@turma) %> |
+	<%= link_to 'Voltar', turmas_path %>
+
+</fieldset>

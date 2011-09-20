@@ -28,7 +28,7 @@ feature 'emissao de plano de estudos' do
   scenario 'aluno com dados incompletos para emitir plano de estudos' do
     @aluno = Factory(:aluno, :nome => 'Kirill Lassounski')
     
-    visit plano_estudos_path(@aluno.id)
+    visit plano_estudos_aluno_path(@aluno.id)
 
     page.should have_content 'nao permitido, pois o aluno nao esta cadastrado em nenhuma turma'
   end

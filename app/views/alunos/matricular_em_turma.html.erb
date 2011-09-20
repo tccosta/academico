@@ -1,0 +1,7 @@
+<%= semantic_form_for @aluno do |f| %>	
+	<p><%= f.input :turmas, :label => "Selecione turmas que deseja matricular o aluno", 
+										:as => :check_boxes, 
+				:collection => Turma.all.map {|t| ["#{t.disciplina.nome} - #{t.disciplina.codigo} #{t.codigo}", t.id]} %>
+	
+	<%=  f.submit "Matricular" %>
+<% end %>

@@ -15,7 +15,7 @@
   </tr>
 
 <% @formacoes.each do |formacao| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= formacao_path(formacao) %>'">
     <td><%= formacao.instituicao %></td>
     <td><%= formacao.tipo %></td>
     <td><%= formacao.ano_de_inicio %></td>
@@ -23,7 +23,6 @@
     <td><%= formacao.area_de_conhecimento %></td>
     <td><%= formacao.titulo_trabalho_de_conclusao %></td>
     <td><%= formacao.orientador %></td>
-    <td><%= link_to 'Exibir', formacao %></td>
     <td><%= link_to 'Editar', edit_formacao_path(formacao) %></td>
     <td><%= link_to 'Excluir', formacao, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>

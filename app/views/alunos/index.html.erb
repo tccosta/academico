@@ -11,13 +11,13 @@
     <th>Nacionalidade</th>
     <th>Naturalidade</th>
     <th>Estado civil</th>
-    <th></th>
-    <th></th>
-    <th></th>
+	<th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% @alunos.each do |aluno| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= aluno_path(aluno) %>'">
     <td><%= aluno.nome %></td>
     <td><%= aluno.email %></td>
     <td><%= aluno.pai %></td>
@@ -27,8 +27,7 @@
     <td><%= aluno.nacionalidade %></td>
     <td><%= aluno.naturalidade %></td>
     <td><%= aluno.estado_civil %></td>
-    <td><%= link_to 'Plano de estudos', plano_estudos_path(aluno) %></td>
-    <td><%= link_to 'Exibir', aluno %></td>
+    <td><%= link_to 'Plano de estudos', plano_estudos_aluno_path(aluno) %></td>
     <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
     <td><%= link_to 'Excluir', aluno, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>

@@ -4,16 +4,15 @@
   <tr>
     <th>Nome</th>
     <th>Sigla</th>
-    <th></th>
-    <th></th>
-    <th></th>
+	<th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% @centros.each do |centro| %>
-  <tr>
-    <td><%= centro.nome %></td>
+  <tr class="campo" onclick="window.location = '<%= centro_path(centro) %>'">
+    <td><%= link_to centro.nome, centro %></td>
     <td><%= centro.sigla %></td>
-    <td><%= link_to 'Mostrar', centro %></td>
     <td><%= link_to 'Editar', edit_centro_path(centro) %></td>
     <td><%= link_to 'Excluir', centro, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>

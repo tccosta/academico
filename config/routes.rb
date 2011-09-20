@@ -1,4 +1,6 @@
 Academico::Application.routes.draw do
+  resources :horarios
+
   resources :turmas
 
   resources :disciplinas
@@ -10,8 +12,11 @@ Academico::Application.routes.draw do
   resources :cursos
   resources :dados_academicos
   resources :formacoes
-  resources :alunos 
-  get '/alunos/:id/plano_estudos' => 'alunos#plano_estudos', :as => :plano_estudos
+  
+  resources :alunos do
+    get 'matricular_em_turma', :on => :member
+    get 'plano_estudos', :on => :member
+  end
 
   resources :professores
   

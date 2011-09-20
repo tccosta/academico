@@ -28,7 +28,7 @@ feature 'cadastrar a formação para  aluno' do
     page.should have_content 'Voltar'
   end
 
-  scenario 'cadastro fromação de nível técnico para o aluno' do
+  scenario 'cadastro formação de nível técnico para o aluno' do
     visit aluno_path(Factory(:aluno))
     click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'IFF'
@@ -88,7 +88,7 @@ feature 'cadastrar a formação para  aluno' do
   end
 
    scenario 'Editar aluno e cadastra formacao de nivel medio' do
-    visit edit_aluno_path(Factory(:aluno))
+    visit aluno_path(Factory(:aluno))
     click_link 'Nova Formação'
     fill_in 'Instituição', :with => 'IFF'
     select( 'Médio', :from => 'Tipo')

@@ -8,20 +8,18 @@
     <th>Area de conhecimento</th>
     <th>Sub area de conhecimento</th>
     <th>Lattes</th>
-    <th></th>
-    <th></th>
-    <th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% @professores.each do |professor| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= professor_path(professor) %>'">
     <td><%= professor.nome %></td>
     <td><%= professor.matricula %></td>
     <td><%= professor.tipo %></td>
     <td><%= professor.area_de_conhecimento %></td>
     <td><%= professor.sub_area_de_conhecimento %></td>
     <td><%= professor.lattes %></td>
-    <td><%= link_to 'Mostrar', professor %></td>
     <td><%= link_to 'Editar', edit_professor_path(professor) %></td>
     <td><%= link_to 'Deletar', professor, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>

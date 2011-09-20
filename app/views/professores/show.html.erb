@@ -1,36 +1,38 @@
-<p id="notice"><%= notice %></p>
+<fieldset>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @professor.nome %>
-</p>
+	<p>
+	  <b>Nome:</b>
+	  <%= @professor.nome %>
+	</p>
 
-<p>
-  <b>Matrícula:</b>
-  <%= @professor.matricula %>
-</p>
+	<p>
+	  <b>Matrícula:</b>
+	  <%= @professor.matricula %>
+	</p>
 
-<p>
-  <b>Tipo:</b>
-  <%= @professor.tipo %>
-</p>
+	<p>
+	  <b>Tipo:</b>
+	  <%= @professor.tipo %>
+	</p>
 
-<p>
-  <b>Área de conhecimento:</b>
-  <%= @professor.area_de_conhecimento %>
-</p>
+	<p>
+	  <b>Área de conhecimento:</b>
+	  <%= @professor.area_de_conhecimento %>
+	</p>
 
-<p>
-  <b>Sub-área de conhecimento:</b>
-  <%= @professor.sub_area_de_conhecimento %>
-</p>
+	<p>
+	  <b>Sub-área de conhecimento:</b>
+	  <%= @professor.sub_area_de_conhecimento %>
+	</p>
 
-<p>
-  <b>Link do curriculo lattes:</b>
-  <%= @professor.lattes %>
-</p>
+	<p>
+	  <b>Link do curriculo lattes:</b>
+	  <%= @professor.lattes %>
+	</p>
 
 
-<%= link_to 'Editar', edit_professor_path(@professor) %> |
-<%= link_to 'Voltar', professores_path %>
+	<%= link_to 'Editar', edit_professor_path(@professor) %> |
+	<%= link_to 'Voltar', professores_path %>
 
+</fieldset>
