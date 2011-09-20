@@ -6,7 +6,6 @@
 		<%= f.input :duracao, :label => 'Duração' %>
 		<%= f.input :professor, :as => :select, :label => 'Coordenador', :collection => @professores %>
 	  	<%= f.input :area_de_conhecimentos, :as => :check_boxes, :collection => AreaDeConhecimento.all %>
-   	<%= link_to 'Nova Area de Conhecimento', new_area_de_conhecimento_path %>
 	<% end %>
   <div class="actions">
     <%= f.submit 'Salvar'%>
