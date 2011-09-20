@@ -1,6 +1,5 @@
 class Aluno < ActiveRecord::Base
-
-  has_and_belongs_to_many :turmas
+  has_and_belongs_to_many :turmas  
   belongs_to :curso
   has_many :formacoes
 
