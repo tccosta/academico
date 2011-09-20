@@ -66,15 +66,13 @@ FactoryGirl.define do
     orgao_emissor_do_rg 'DETRAN'
     data_de_expedicao_do_rg '23/02/2010'
     estado_do_rg 'Rio de Janeiro'
-    #Certificado de reservista
-    numero_do_certificado_de_reservista '25'
-    categoria_do_certificado_de_reservista 'A'
-    estado_do_certificado_de_reservista 'Rio de Janeiro'
     data_de_emissao_do_certificado_de_reservista '30/06/2011'
-    orgao_do_certificado_de_reservista 'Exército'
-    #Titulo de eleitor
     numero_do_titulo_de_eleitor '12345'
     estado_do_titulo_de_eleitor 'RJ'
+    numero_do_certificado_de_reservista '12233232'
+    categoria_do_certificado_de_reservista 'ab'
+    orgao_do_certificado_de_reservista 'trt'
+    estado_do_certificado_de_reservista 'RJ'
   end
 end
 
