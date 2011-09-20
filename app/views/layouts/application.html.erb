@@ -21,7 +21,13 @@
 		</div>
 	</div>
 	
-	<div id="main"><%= yield %></div>
+	<div id="main">
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, :class => "aviso") %>
+		<% end %>
+		
+		<%= yield %>
+	</div>
 	<div id="footer">UENF - 2011</div>
 </body>
 </html>

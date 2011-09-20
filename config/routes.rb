@@ -15,10 +15,8 @@ Academico::Application.routes.draw do
   
   resources :alunos do
     get 'matricular_em_turma', :on => :member
-    post 'matricular', :on => :member
+    get 'plano_estudos', :on => :member
   end
-  
-  get '/alunos/:id/plano_estudos' => 'alunos#plano_estudos', :as => :plano_estudos
 
   resources :professores
   

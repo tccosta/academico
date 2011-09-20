@@ -12,6 +12,17 @@ class TurmasController < InheritedResources::Base
     end
   end
 
+  def destroy
+    @turma = Turma.find(params[:id])
+    
+    if @turma.alunos.present?
+      redirect_to :turmas, :notice => "A turma possui alunos matriculados"
+    else
+      @turma.destroy
+      redirect_to :turmas
+    end
+  end
+  
  	def carregar_professores
 		@professores = Professor.find(:all).collect {|u| [u.nome, u.id]}
 	end

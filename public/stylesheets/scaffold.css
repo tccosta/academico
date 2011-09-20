@@ -126,3 +126,5 @@ fieldset legend {
     font-weight: bold;
     font-size: 110%;
 }
+
+.aviso { background: red; padding: 5px; color: white;}

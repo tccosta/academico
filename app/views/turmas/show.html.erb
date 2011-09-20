@@ -37,7 +37,7 @@
 		<legend>Alunos Matriculados</legend>
 		
 		<% @turma.alunos.each do |aluno| %>
-			<%= aluno.nome %>
+			<%= link_to aluno.nome, aluno %>
 			<p><%= %></p>
 		<% end %>
    </fieldset>
