@@ -10,7 +10,6 @@
     <th>Áreas de Conhecimento</th>
 	<th></th>
 	<th></th>
-	<th></th>
   </tr>
 
 <% @cursos.each do |curso| %>
@@ -22,7 +21,7 @@
 	 <td><%= curso.professor.nome %></td>
 	<td> 
 	<% curso.area_de_conhecimentos.map do |area_de_conhecimento| %>
-		<%= "#{area_de_conhecimento.name}, " %>
+		<%= "#{area_de_conhecimento.name}" %><br />
     <% end %>
    </td>
     <td><%= link_to 'Editar', edit_curso_path(curso) %></td>

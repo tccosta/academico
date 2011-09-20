@@ -23,8 +23,7 @@
 	        <% @turma.horarios.each do |h| %>
 	            <%= "#{h.dia_da_semana}, de #{h.hora_de_inicio.strftime('%H:%M')} à #{h.hora_de_fim.strftime('%H:%M')} " %>
 
-	             <td><%= link_to 'Mostrar', f %></td> |
-	             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
+	             <%= link_to 'Apagar', h, :confirm => 'Tem certeza?', :method => :delete %>
 	             <br> <br>
 
 	               <% end %>
