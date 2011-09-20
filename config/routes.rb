@@ -13,6 +13,7 @@ Academico::Application.routes.draw do
   resources :dados_academicos
   resources :formacoes
   resources :alunos 
+  
   get '/alunos/:id/plano_estudos' => 'alunos#plano_estudos', :as => :plano_estudos
 
   resources :professores

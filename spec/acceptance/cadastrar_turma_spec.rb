@@ -37,7 +37,6 @@ feature 'cadastrar turma' do
     select('Desenvolvimento Ágil', :from => 'Disciplina')
     click_button 'Salvar'
     page.should have_content 'Turmas'
-    page.should have_content 'Mostrar'
     page.should have_content 'Editar'
     page.should have_content 'Excluir'
     page.should have_content 'Adicionar horário'
@@ -58,9 +57,8 @@ feature 'cadastrar turma' do
     select('00', :from => 'horario_hora_de_fim_5i')
     click_button 'Salvar'
 
-    page.should have_content 'Horários'
-    page.should have_content 'Terça-feira, De 10:00 à 12:00'
-    page.should have_content 'Quinta-feira, De 08:00 à 10:00'
+    page.should have_content 'Terça-feira, de 10:00 à 12:00'
+    page.should have_content 'Quinta-feira, de 08:00 à 10:00'
   end
 
 end

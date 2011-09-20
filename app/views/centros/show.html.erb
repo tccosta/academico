@@ -1,3 +1,5 @@
+<fieldset>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -22,13 +24,13 @@
 
                <% end %>
       </p>
- </fieldset>
-
-<%= link_to 'Novo Laboratório', :controller => "laboratorios",
-                                 :action => "new",
-                                 :centro => @centro %>
+		<%= link_to 'Novo Laboratório', :controller => "laboratorios",
+		                                 :action => "new",
+		                                 :centro => @centro %>
+</fieldset>
 
 
 <%= link_to 'Editar', edit_centro_path(@centro) %> |
 <%= link_to 'Voltar', centros_path %>
 
+</fieldset>

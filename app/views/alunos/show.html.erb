@@ -1,3 +1,5 @@
+<h2><%= @aluno.nome %></h2>
+
 <p id="notice"><%= notice %></p>
 
 <fieldset>
@@ -149,7 +151,7 @@
 
 <%= link_to 'Nova Formação', :controller => "formacoes",
                                  :action => "new",
-                                 :aluno => @aluno %>
+                                 :aluno => @aluno %> |
 
 <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
 <%= link_to 'Voltar', alunos_path %>

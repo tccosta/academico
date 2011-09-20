@@ -51,10 +51,6 @@ jQuery(function($){
     <%= f.input :estado_do_certificado_de_reservista, :collection => option_estados_for_select  %>
   </fieldset>
  </fieldset>
-  <fieldset>
-   <legend>Formações</legend>
-        <%= link_to 'Nova Formação', :controller => "formacoes", :action => "new", :aluno => @aluno %>
- </fieldset>
 
   <div class="actions">
     <%= f.submit 'Salvar' %>

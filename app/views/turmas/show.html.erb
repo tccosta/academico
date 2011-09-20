@@ -1,38 +1,43 @@
-<p id="notice"><%= notice %></p>
+<fieldset>
 
-<p>
-  <b>Semestre letivo:</b>
-  <%= @turma.semestre_letivo %>
-</p>
+	<legend>Turma</legend>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Disciplina:</b>
-  <%= @turma.disciplina.nome %>
-</p>
+	<p>
+	  <b>Semestre letivo:</b>
+	  <%= @turma.semestre_letivo %>
+	</p>
 
-<p>
-  <b>Professor:</b>
-  <%= @turma.professor.nome %>
-</p>
+	<p>
+	  <b>Disciplina:</b>
+	  <%= @turma.disciplina.nome %>
+	</p>
 
-  <fieldset>
-   <legend>Horários</legend>
-        <% @turma.horarios.each do |f| %>
-            <%= "#{f.dia_da_semana}, De #{f.hora_de_inicio.strftime('%H:%M')} à #{f.hora_de_fim.strftime('%H:%M')} " %>
+	<p>
+	  <b>Professor:</b>
+	  <%= @turma.professor.nome %>
+	</p>
 
-             <td><%= link_to 'Mostrar', f %></td> |
-             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
-             <br> <br>
+	  <fieldset>
+	   <legend>Horários</legend>
+	        <% @turma.horarios.each do |f| %>
+	            <%= "#{f.dia_da_semana}, De #{f.hora_de_inicio.strftime('%H:%M')} à #{f.hora_de_fim.strftime('%H:%M')} " %>
 
-               <% end %>
-      </p>
- </fieldset>
+	             <td><%= link_to 'Mostrar', f %></td> |
+	             <%= link_to 'Apagar', f, :confirm => 'Tem certeza?', :method => :delete %>
+	             <br> <br>
 
-<%= link_to 'Novo horário', :controller => "horarios",
-                                 :action => "new",
-                                 :turma => @turma %> |
+	               <% end %>
+	      </p>
+		<%= link_to 'Novo horário', :controller => "horarios",
+		                                 :action => "new",
+		                                 :turma => @turma %>
+	 </fieldset>
 
 
-<%= link_to 'Editar', edit_turma_path(@turma) %> |
-<%= link_to 'Voltar', turmas_path %>
 
+
+	<%= link_to 'Editar', edit_turma_path(@turma) %> |
+	<%= link_to 'Voltar', turmas_path %>
+
+</fieldset>

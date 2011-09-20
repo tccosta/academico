@@ -13,13 +13,12 @@
   </tr>
 
 <% @disciplinas.each do |disciplina| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= disciplina_path(disciplina) %>'">
     <td><%= disciplina.codigo %></td>
     <td><%= disciplina.nome %></td>
     <td><%= disciplina.creditos %></td>
     <td><%= disciplina.carga_horaria %></td>
     <td><%= disciplina.numero_maximo_de_aluno %></td>
-    <td><%= link_to 'Exibir', disciplina %></td>
     <td><%= link_to 'Editar', edit_disciplina_path(disciplina) %></td>
     <td><%= link_to 'Excluir', disciplina, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>

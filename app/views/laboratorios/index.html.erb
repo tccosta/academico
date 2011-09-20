@@ -7,15 +7,13 @@
     <th>Nome</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @laboratorios.each do |laboratorio| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= laboratorio_path(laboratorio) %>'">
     <td><%= laboratorio.centro.sigla %></td>
     <td><%= laboratorio.sigla %></td>
     <td><%= laboratorio.nome %></td>
-    <td><%= link_to 'Exibir', laboratorio %></td>
     <td><%= link_to 'Editar', edit_laboratorio_path(laboratorio) %></td>
     <td><%= link_to 'Excluir', laboratorio, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
@@ -23,4 +21,3 @@
 </table>
 
 <br />
-

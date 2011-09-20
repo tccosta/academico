@@ -1,16 +1,24 @@
-<p id="notice"><%= notice %></p>
+<fieldset>
+	
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Nome:</b>
-  <%= @laboratorio.nome %>
-</p>
+	<p>
+	  <b>Nome:</b>
+	  <%= @laboratorio.nome %>
+	</p>
 
-<p>
-  <b>Sigla:</b>
-  <%= @laboratorio.sigla %>
-</p>
+	<p>
+	  <b>Sigla:</b>
+	  <%= @laboratorio.sigla %>
+	</p>
+
+	<p>
+		<b>Centro:</b>
+		<%= @laboratorio.centro.nome %>
+	</p>
 
 
-<%= link_to 'Editar', edit_laboratorio_path(@laboratorio) %> |
-<%= link_to 'Voltar', laboratorios_path %>
+	<%= link_to 'Editar', edit_laboratorio_path(@laboratorio) %> |
+	<%= link_to 'Voltar', laboratorios_path %>
 
+</fieldset>

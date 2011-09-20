@@ -1,30 +1,34 @@
-<p id="notice"><%= notice %></p>
+<fieldset>
+	
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Código:</b>
-  <%= @disciplina.codigo %>
-</p>
+	<p>
+	  <b>Código:</b>
+	  <%= @disciplina.codigo %>
+	</p>
 
-<p>
-  <b>Nome:</b>
-  <%= @disciplina.nome %>
-</p>
+	<p>
+	  <b>Nome:</b>
+	  <%= @disciplina.nome %>
+	</p>
 
-<p>
-  <b>Créditos:</b>
-  <%= @disciplina.creditos %>
-</p>
+	<p>
+	  <b>Créditos:</b>
+	  <%= @disciplina.creditos %>
+	</p>
 
-<p>
-  <b>Carga horária:</b>
-  <%= @disciplina.carga_horaria %>
-</p>
+	<p>
+	  <b>Carga horária:</b>
+	  <%= @disciplina.carga_horaria %>
+	</p>
 
-<p>
-  <b>Número máximo de alunos:</b>
-  <%= @disciplina.numero_maximo_de_aluno %>
-</p>
+	<p>
+	  <b>Número máximo de alunos:</b>
+	  <%= @disciplina.numero_maximo_de_aluno %>
+	</p>
 
 
-<%= link_to 'Editar', edit_disciplina_path(@disciplina) %> |
-<%= link_to 'Voltar', disciplinas_path %>
+	<%= link_to 'Editar', edit_disciplina_path(@disciplina) %> |
+	<%= link_to 'Voltar', disciplinas_path %>
+
+</fieldset>

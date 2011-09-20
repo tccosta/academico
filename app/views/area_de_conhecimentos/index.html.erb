@@ -9,9 +9,8 @@
   </tr>
 
 <% @area_de_conhecimentos.each do |area_de_conhecimento| %>
-  <tr>
+  <tr class="campo" onclick="window.location = '<%= area_de_conhecimento_path(area_de_conhecimento) %>'">
     <td><%= area_de_conhecimento.name %></td>
-    <td><%= link_to 'Exibir', area_de_conhecimento %></td>
     <td><%= link_to 'Editar', edit_area_de_conhecimento_path(area_de_conhecimento) %></td>
     <td><%= link_to 'Excluir', area_de_conhecimento, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>

@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110918131417) do
 
-
   create_table "alunos", :force => true do |t|
     t.string   "nome"
     t.string   "email"
@@ -70,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110918131417) do
   create_table "cursos", :force => true do |t|
     t.string   "nome"
     t.string   "sigla"
+    t.string   "laboratorio"
     t.integer  "duracao"
     t.integer  "professor_id"
     t.integer  "laboratorio_id"

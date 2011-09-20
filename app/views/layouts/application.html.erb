@@ -7,19 +7,21 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<h1 class="topo">Sistema Acadêmico</h1>
-<div id="menu">
-	<%= link_to 'Alunos', alunos_path %>
-	<%= link_to 'Professores', professores_path %>
-	<%= link_to 'Dados acadêmicos', dados_academicos_path %>
-	<%= link_to 'Centros', centros_path %>
-	<%= link_to 'Laboratórios', laboratorios_path %>
-	<%= link_to 'Disciplinas', disciplinas_path %>
-	<%= link_to 'Turmas', turmas_path %>
-	<%= link_to 'Cursos', cursos_path %>
-</div>
-<%= yield %>
-<div id="footer">UENF - 2011</div>
+	<div id="topo">
+		<h1>Sistema Acadêmico</h1>
+		<div id="menu">
+			<%= link_to 'Alunos', alunos_path %>
+			<%= link_to 'Professores', professores_path %>
+			<%= link_to 'Dados acadêmicos', dados_academicos_path %>
+			<%= link_to 'Centros', centros_path %>
+			<%= link_to 'Laboratórios', laboratorios_path %>
+			<%= link_to 'Disciplinas', disciplinas_path %>
+			<%= link_to 'Turmas', turmas_path %>
+			<%= link_to 'Cursos', cursos_path %>
+		</div>
+	</div>
+	<%= yield %>
+	<div id="footer">UENF - 2011</div>
 </body>
 </html>
 
