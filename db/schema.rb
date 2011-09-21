@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110920033331) do
+ActiveRecord::Schema.define(:version => 20110920201603) do
 
   create_table "alunos", :force => true do |t|
     t.string   "nome"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20110920033331) do
     t.integer  "numero_maximo_de_aluno"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "laboratorio_id"
   end
 
   create_table "formacoes", :force => true do |t|
