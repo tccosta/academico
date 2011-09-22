@@ -1,30 +1,65 @@
 <style type="text/css" media="screen">
+#logo_uenf {
+	background-image: url(../../images/logo_uenf.gif);
+	height:54px;
+	width:200px;
+	float:left;
+}
+
 #header_plano {
-	height:200px;
-	width:2000px;
+	width:100%;
+	border:1px solid;
+	text-align:center;
+	padding:2px;
+}
+
+#topo{
+	font-size:30px;
+	
+	
+}
+#footer_plano {
+	border-top:1px solid;
+	margin-top:27%;
+	width:100%;
+	
+	text-align:center;
+}
+#meio_plano {
+	margin-top:5px;
+	border: 1px solid;
+	padding:2px;
+}
+#meio_materias {
+	margin-top:5px;
+	border: 1px solid;
+	padding:2px;
 }
 </style>
 
 <title>Plano de Estudos</title>
 <div id="header_plano">
-	UENF - PLANO DE ESTUDOS
-	<p>Data emissão: <%= Time.now.strftime("%H : %m : %s") %></p>		
+	<img id="logo_uenf"></img>
+	<b id="topo">PLANO DE ESTUDOS</b>
+	<p>Data emissão: <%= Time.now.strftime("%H : %M : %S") %></p>		
 	
 </div>
 <div id="meio_plano">
-<p>Centro: <%= @aluno.curso.laboratorio.centro %></p>
-<p>Laboratorio: <%= @aluno.curso.laboratorio %></p>		
+<p>Centro: <%#= @aluno.curso.laboratorio.centro %></p>
+<p>Laboratorio: <%#= @aluno.curso.laboratorio %></p>		
 <p>Curso: <%= @aluno.curso %></p>				
 <p>Nome: <%= @aluno.nome %></p>		
+	</div>
+	<div id="meio_materias">
+		<h2>Turmas matriculadas</h2>		
+				<h2><% @aluno.turmas.each { |turma| %></h2>
+					<p>Materia: <%= turma.disciplina.nome %></p>		
+					<p>Creditos: <%= turma.disciplina.creditos %></p>		
+				<% } %>
+	</div>
 	
-	<h2>Turmas matriculas</h2>		
-			<h2><% @aluno.turmas.each { |turma| %></h2>
-				<p>Materia: <%= turma.disciplina.nome %></p>		
-				<p>Creditos: <%= turma.disciplina.creditos %></p>		
-			<% } %>
-</div>
 <div id="footer_plano">
-	UENF	
+	Universidade Estadual Norte Fluminense	
 </div>
 
 

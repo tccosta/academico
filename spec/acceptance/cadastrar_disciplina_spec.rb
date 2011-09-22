@@ -5,7 +5,10 @@ require 'spec_helper'
 feature 'cadastrar disciplina' do
   scenario 'cadastro normal' do
 
-    visit new_disciplina_path
+    laboratorio = Factory(:laboratorio)
+    visit laboratorio_path(laboratorio)
+    click_link 'Nova Disciplina'
+
     fill_in 'Código', :with => 'INFO00'
     fill_in 'Nome', :with => 'Redes'
     fill_in 'Créditos', :with => '4'
@@ -23,9 +26,11 @@ feature 'cadastrar disciplina' do
     page.should have_content 'Voltar'
   end
 
-    scenario 'cadastro incompleto' do
+  scenario 'cadastro incompleto' do
 
-    visit new_disciplina_path
+    lab = Factory.create :laboratorio
+    visit laboratorio_path(lab)
+    click_link 'Nova Disciplina'
     fill_in 'Código', :with => 'INFO00'
     fill_in 'Créditos', :with => '4'
     fill_in 'Número máximo de alunos', :with => '30'
@@ -36,3 +41,4 @@ feature 'cadastrar disciplina' do
     page.should have_content 'Voltar'
   end
 end
+

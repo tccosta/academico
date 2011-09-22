@@ -25,6 +25,10 @@ class Aluno < ActiveRecord::Base
   usar_como_cpf :cpf
 
   def e_necessario_certificado_de_reservista?
+    if (:nacionalidade.upcase != 'brasileira')
+      false
+    end
+
     return false if data_de_nascimento.blank?
     age = Date.today.year - data_de_nascimento.year
     age -= 1 if Date.today < data_de_nascimento + age.years #for days before birthday

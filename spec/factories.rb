@@ -24,6 +24,7 @@ FactoryGirl.define do
   factory :laboratorio do
     nome 'Laboratório de Ciências Matemáticas'
     sigla 'LCMAT'
+    association :centro
   end
 
   factory :curso do
