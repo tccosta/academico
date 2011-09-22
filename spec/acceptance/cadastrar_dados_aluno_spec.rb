@@ -4,6 +4,9 @@ require 'spec_helper'
 
 feature 'cadastrar dados pessoais do aluno' do
   scenario 'cadastro normal' do
+
+    Factory.create :curso
+
     visit new_aluno_path
     #DADOS PESSOAIS DO ALUNO
     fill_in 'Nome', :with => 'Kirill'
@@ -31,6 +34,17 @@ feature 'cadastrar dados pessoais do aluno' do
     fill_in 'Categoria do certificado de reservista', :with => 'a'
     fill_in 'Data de emissao do certificado de reservista', :with => '10/02/2009'
     select('Rio de Janeiro', :from => 'Estado do certificado de reservista')
+
+    #Dados Acadêmicos
+    fill_in 'Matrícula', :with => '108123928'
+    select 'Ciência da Computação', :from => 'Curso'
+    fill_in 'Semestre', :with => '201102'
+    select('Vestibular', :from => 'Forma de Ingresso')
+    fill_in 'Data do vestibular/ENEM', :with => '22/12/2010'
+    check 'Cotista'
+    select('Ensino Público', :from => 'Tipo de cota')
+    fill_in 'Link do Curriculum Lattes', :with => 'http://lattes.cnpq.br/1619508753128532'
+
     click_button 'Salvar'
 #save_and_open_page
     page.should have_content 'Aluno cadastrado com sucesso.'
@@ -59,6 +73,15 @@ feature 'cadastrar dados pessoais do aluno' do
     page.should have_content 'Categoria do Certificado de Reservista: a'
     page.should have_content 'Data de Emissão do Certificado de Reservista: 10/02/2009'
     page.should have_content 'Estado do Certificado de Reservista: RJ'
+    page.should have_content 'Matricula: 108123928'
+    page.should have_content 'Curso: Ciência da Computação'
+    page.should have_content 'Semestre: 201102'
+    page.should have_content 'Forma de Ingresso: Vestibular'
+    page.should have_content 'Data do vestibular/ENEM: 22/12/2010'
+    page.should have_content 'Cotista: Sim'
+    page.should have_content 'Tipo de cota: Ensino Público'
+    page.should have_content 'Link do lattes: http://lattes.cnpq.br/1619508753128532'
+
     page.should have_content 'Editar'
     page.should have_content 'Voltar'
   end

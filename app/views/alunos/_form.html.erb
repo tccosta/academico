@@ -4,6 +4,7 @@ jQuery(function($){
    $("#aluno_data_de_expedicao_do_rg").mask("99/99/9999");
    $("#aluno_data_de_emissao_do_titulo_de_eleitor").mask("99/99/9999");
    $("#aluno_data_de_emissao_do_certificado_de_reservista").mask("99/99/9999");
+   $("#aluno_data_da_prova_do_ingresso").mask("99/99/9999");
 
 });
 </script>
@@ -51,6 +52,20 @@ jQuery(function($){
     <%= f.input :estado_do_certificado_de_reservista, :collection => option_estados_for_select  %>
   </fieldset>
  </fieldset>
+
+ <fieldset>
+    <legend> Dados Acadêmicos </legend>
+    <%= f.input :matricula , :label => 'Matrícula' %>
+    <%= f.input :curso, :label => 'Curso', :label_method => :nome %>
+    <%= f.input :semestre, :label => 'Semestre', :input_html => {:size => 2} %>
+    <%= f.input :forma_de_ingresso, :label => 'Forma de Ingresso', :collection => Aluno::FORMA_DE_INGRESSO %>
+    <%= f.input :data_da_prova_do_ingresso , :label => 'Data do vestibular/ENEM', :as => :string, :input_html => {:size => 8} %>
+    <fieldset>
+    <%= f.input :cotista , :label => 'Cotista', :in => [true, false] %>
+    <%= f.input :tipo_de_cota , :label => 'Tipo de cota', :collection => Aluno::TIPO_DE_COTA %>
+    </fieldset>
+    <%= f.input :link_do_lattes , :label => 'Link do Curriculum Lattes', :input_html => {:size => 100} %>
+    </fieldset>
 
   <div class="actions">
     <%= f.submit 'Salvar' %>

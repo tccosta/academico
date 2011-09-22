@@ -41,7 +41,7 @@ FactoryGirl.define do
     carga_horaria '30'
     numero_maximo_de_aluno '25'
   end
-  
+
   factory :turma do
     semestre_letivo '2011-2'
     codigo 'A'
@@ -72,6 +72,14 @@ FactoryGirl.define do
     categoria_do_certificado_de_reservista 'ab'
     orgao_do_certificado_de_reservista 'trt'
     estado_do_certificado_de_reservista 'RJ'
+    matricula '108123928'
+    association :curso
+    semestre '201102'
+    forma_de_ingresso 'Vestibular'
+    data_da_prova_do_ingresso '22/12/2010'
+    cotista true
+    tipo_de_cota 'Ensino Público'
+    link_do_lattes 'http://lattes.cnpq.br/1619508753128532'
   end
 end
 

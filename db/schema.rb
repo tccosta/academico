@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(:version => 20110920033331) do
     t.string   "categoria_do_certificado_de_reservista"
     t.date     "data_de_emissao_do_certificado_de_reservista"
     t.string   "estado_do_certificado_de_reservista"
+    t.integer  "matricula"
+    t.integer  "curso_id"
+    t.integer  "semestre"
+    t.string   "forma_de_ingresso"
+    t.date     "data_da_prova_do_ingresso"
+    t.boolean  "cotista"
+    t.string   "tipo_de_cota"
+    t.string   "link_do_lattes"
   end
 
   create_table "alunos_turmas", :id => false, :force => true do |t|
@@ -69,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20110920033331) do
   create_table "cursos", :force => true do |t|
     t.string   "nome"
     t.string   "sigla"
-    t.string   "laboratorio"
+	t.string   "laboratorio"
     t.integer  "duracao"
     t.integer  "professor_id"
     t.integer  "laboratorio_id"

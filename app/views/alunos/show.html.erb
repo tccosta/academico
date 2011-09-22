@@ -153,12 +153,54 @@
  </fieldset>
 
 <fieldset>
+  <legend>Dados Acadêmicos </legend>
+  <b>Matricula:</b>
+  <%= @aluno.matricula %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @aluno.curso.try(:nome) %>
+</p>
+
+<p>
+  <b>Semestre:</b>
+  <%= @aluno.semestre %>
+</p>
+
+<p>
+  <b>Forma de Ingresso:</b>
+  <%= @aluno.forma_de_ingresso %>
+</p>
+
+<p>
+  <b>Data do vestibular/ENEM:</b>
+  <%= @aluno.data_da_prova_do_ingresso.to_s_br %>
+</p>
+
+<p>
+  <b>Cotista:</b>
+  <%= @aluno.cotista ? 'Sim': 'Nao' %>
+</p>
+
+<p>
+  <b>Tipo de cota:</b>
+  <%= @aluno.tipo_de_cota %>
+</p>
+
+<p>
+  <b>Link do lattes:</b>
+  <%= @aluno.link_do_lattes %>
+</p>
+</fieldset>
+
+<fieldset>
 	<legend>Turmas em que está matriculado</legend>
 
 		<% @aluno.turmas.each do |turma| %>
 			<p><%= link_to "#{turma.disciplina.nome} - #{turma.disciplina.codigo} #{turma.codigo}", turma %></p>
 		<% end %>
-	
+
 		<br />
 	<%= link_to 'Matricular aluno em turmas', matricular_em_turma_aluno_path(@aluno) %>
 </fieldset>
