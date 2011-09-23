@@ -12,7 +12,10 @@
 	  <b>Disciplina:</b>
 	  <%= @turma.disciplina.nome %>
 	</p>
-
+<p>
+  <b>Numero da Turma:</b>
+  <%= @turma.numero %>
+</p>
 	<p>
 	  <b>Professor:</b>
 	  <%= @turma.professor.nome %>
@@ -35,7 +38,7 @@
 
 	 <fieldset>
 		<legend>Alunos Matriculados</legend>
-		
+
 		<% @turma.alunos.each do |aluno| %>
 			<%= link_to aluno.nome, aluno %>
 			<p><%= %></p>
@@ -48,3 +51,4 @@
 	<%= link_to 'Voltar', turmas_path %>
 
 </fieldset>
+

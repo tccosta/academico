@@ -12,7 +12,7 @@ feature 'cadastrar turma' do
     fill_in 'Codigo', :with => 'A'
     select('Annabell', :from => 'Professor')
     select('Desenvolvimento Ágil', :from => 'Disciplina')
-
+    fill_in 'Numero da Turma' , :with => '01'
     click_button 'Salvar'
 
     page.should have_content 'Turmas'
@@ -20,6 +20,7 @@ feature 'cadastrar turma' do
     page.should have_content 'Desenvolvimento Ágil'
     page.should have_content 'Annabell'
     page.should have_content 'A'
+    page.should have_content '01'
   end
 
   scenario 'cadastro incorreto' do
@@ -36,7 +37,7 @@ feature 'cadastrar turma' do
 
     fill_in 'Semestre Letivo', :with => '2011-1'
     fill_in 'Codigo', :with => 'A'
-    
+    fill_in 'Numero da Turma' , :with => '01'
     select('Annabell', :from => 'Professor')
     select('Desenvolvimento Ágil', :from => 'Disciplina')
     click_button 'Salvar'
@@ -44,6 +45,7 @@ feature 'cadastrar turma' do
     page.should have_content 'Editar'
     page.should have_content 'Excluir'
     page.should have_content 'Adicionar horário'
+    page.should have_content '01'
 
     click_link 'Adicionar horário'
     select('Terça-feira', :from => 'Dia da semana')
@@ -64,6 +66,42 @@ feature 'cadastrar turma' do
     page.should have_content 'Terça-feira, de 10:00 à 12:00'
     page.should have_content 'Quinta-feira, de 08:00 à 10:00'
   end
+
+  scenario 'cadastrar turma com numero' do
+    Factory(:professor, :nome => 'Annabell')
+    Factory(:disciplina, :nome => 'Desenvolvimento Ágil')
+    visit new_turma_path
+
+    fill_in 'Semestre Letivo', :with => '2011-1'
+    fill_in 'Codigo', :with => 'A'
+    select('Annabell', :from => 'Professor')
+    select('Desenvolvimento Ágil', :from => 'Disciplina')
+    fill_in 'Numero da Turma' , :with => '01'
+
+    click_button 'Salvar'
+
+    page.should have_content 'Turmas'
+    page.should have_content '2011-1'
+    page.should have_content 'Desenvolvimento Ágil'
+    page.should have_content 'Annabell'
+    page.should have_content 'A'
+    page.should have_content '01'
+  end
+
+scenario 'Turma deve ter um numero' do
+    Factory(:professor, :nome => 'Annabell')
+    Factory(:disciplina, :nome => 'Desenvolvimento Ágil')
+    visit new_turma_path
+
+    fill_in 'Semestre Letivo', :with => '2011-1'
+    fill_in 'Codigo', :with => 'A'
+    select('Annabell', :from => 'Professor')
+    select('Desenvolvimento Ágil', :from => 'Disciplina')
+    click_button 'Salvar'
+
+    page.should have_content 'O campo deve ser preenchido'
+  end
+
 
 end
 

@@ -1,6 +1,7 @@
 <%= semantic_form_for(@turma) do |f| %>
 	<%= f.inputs do %>
 		<%= f.input :codigo, :label => 'Codigo' %>
+		<%= f.input :numero, :label => 'Numero da Turma' %>
 		<%= f.input :semestre_letivo, :label => 'Semestre Letivo' %>
 		<%= f.input :disciplina, :as => :select, :collection => @disciplinas, :label => 'Disciplina' %>
 		<%= f.input :professor, :as => :select,  :label => 'Professor', :collection => @professores %>

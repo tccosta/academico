@@ -46,6 +46,7 @@ FactoryGirl.define do
   factory :turma do
     semestre_letivo '2011-2'
     codigo 'A'
+    numero '01'
     association :disciplina
     association :professor
   end
